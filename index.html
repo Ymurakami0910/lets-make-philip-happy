@@ -128,18 +128,15 @@ body {
 /* ── MAIN LAYOUT ── */
 .quiz-layout {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  /* min-height fills viewport; no hard height so right panel can expand freely */
-  min-height: calc(100vh - 52px - 3px - 46px);
+  grid-template-columns: 1fr 400px;
   align-items: start;
 }
 
 /* ── LEFT PANEL ── */
+/* Grows freely — page scrolls naturally */
 .left-panel {
   padding: 28px 32px;
   border-right: 1px solid var(--border);
-  /* Scroll handled by page, not a clipped box */
-  min-height: calc(100vh - 52px - 3px - 46px);
 }
 .question-label {
   font-family: var(--font-mono); font-size: 11px; color: var(--text-faint);
@@ -206,17 +203,19 @@ body {
 .choice-icon { font-size: 15px; flex-shrink: 0; }
 
 /* ── RIGHT PANEL ── */
+/* Sticky column — sticks below header+progressbar+nav.
+   overflow-y:auto lets it scroll internally when content is taller than viewport.
+   Tool cards must NOT use overflow:hidden so content isn't clipped. */
 .right-panel {
-  display: flex;
-  flex-direction: column;
-  padding: 24px 20px;
-  gap: 0;
-  background: var(--surface);
-  /* Sticky so tools stay visible while left panel scrolls on desktop */
   position: sticky;
-  top: calc(52px + 3px + 46px); /* header + progress bar + nav */
-  max-height: calc(100vh - 52px - 3px - 46px);
+  top: 101px; /* 52px header + 3px progress bar + 46px nav */
+  height: calc(100vh - 101px);
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px 20px;
+  background: var(--surface);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 .panel-section-title {
   font-family: var(--font-mono); font-size: 10px; color: var(--text-faint);
@@ -224,49 +223,50 @@ body {
 }
 
 /* ── ACCORDION TOOL CARDS ── */
-/* Each tool is a self-contained card. Content expands INSIDE the card,
-   never overlapping adjacent cards. The panel just scrolls normally. */
 .tool-card {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  /* NO overflow:hidden — that was clipping expanded content */
   margin-bottom: 8px;
   transition: box-shadow .15s;
 }
 .tool-card:last-child { margin-bottom: 0; }
-.tool-card:has(.tool-body:not(.hidden)) {
-  box-shadow: var(--shadow-sm);
-}
 
 .tool-trigger {
   width: 100%; padding: 11px 14px;
-  border: none; background: var(--bg); color: var(--text);
+  border: none;
+  border-radius: var(--radius); /* rounded when closed */
+  background: var(--bg); color: var(--text);
   font-family: var(--font-body); font-size: 13px; font-weight: 500;
   cursor: pointer; display: flex; align-items: center; gap: 10px;
   transition: background .15s;
   text-align: left;
 }
+/* When open, only round the top corners */
+.tool-trigger.open {
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--border);
+}
 .tool-trigger:hover { background: #f0eeea; }
-.tool-trigger.open { background: var(--surface); border-bottom: 1px solid var(--border); }
 
 /* colour variants */
 .tool-card.eq   .tool-trigger { background: var(--info-light); color: var(--info); }
 .tool-card.eq   .tool-trigger:hover { background: #dce9f9; }
 .tool-card.eq   .tool-trigger.open  { background: var(--info-light); border-bottom-color: #c5d8f7; }
-
 .tool-card.hint .tool-trigger { background: var(--warn-light); color: var(--warn); }
 .tool-card.hint .tool-trigger:hover { background: #fce9d4; }
 .tool-card.hint .tool-trigger.open  { background: var(--warn-light); border-bottom-color: #f5d5b8; }
-
 .tool-card.solution .tool-trigger.open { border-bottom-color: #c8ebd8; }
 
 .tool-body {
   padding: 14px;
-  animation: accordionIn .18s ease;
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
   background: var(--surface);
+  animation: accordionIn .18s ease;
 }
 @keyframes accordionIn {
-  from { opacity: 0; transform: translateY(-4px); }
+  from { opacity: 0; transform: translateY(-3px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -450,17 +450,27 @@ body {
    MOBILE
 ═══════════════════════════════════════ */
 @media (max-width: 768px) {
-  .quiz-layout { grid-template-columns: 1fr; min-height: auto; align-items: start; }
-  .left-panel { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 16px; min-height: auto; }
-  .right-panel {
+  .quiz-layout {
+    display: block; /* single column, no grid */
+  }
+  .left-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
     padding: 20px 16px;
-    position: static; /* no sticky on mobile */
-    max-height: none;
-    overflow-y: visible;
+  }
+  .right-panel {
+    position: static;   /* no sticky */
+    height: auto;       /* no fixed height */
+    overflow: visible;  /* no internal scroll */
+    padding: 20px 16px;
   }
   .quiz-nav, .app-header { padding-left: 16px; padding-right: 16px; }
   .modal-backdrop { align-items: flex-end; padding: 0; }
-  .modal-card { max-width: 100%; border-radius: var(--radius-lg) var(--radius-lg) 0 0; animation: modalUp .28s cubic-bezier(.34,1.3,.64,1); }
+  .modal-card {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    animation: modalUp .28s cubic-bezier(.34,1.3,.64,1);
+  }
   @keyframes modalUp { from{transform:translateY(100%);opacity:.8} to{transform:translateY(0);opacity:1} }
   .results-card { padding: 24px 20px; }
   .results-score { font-size: 44px; }
