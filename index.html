@@ -129,17 +129,17 @@ body {
 .quiz-layout {
   display: grid;
   grid-template-columns: 1fr 380px;
-  height: calc(100vh - 52px - 3px - 46px);
-  overflow: hidden;
+  /* min-height fills viewport; no hard height so right panel can expand freely */
+  min-height: calc(100vh - 52px - 3px - 46px);
+  align-items: start;
 }
 
 /* ── LEFT PANEL ── */
 .left-panel {
   padding: 28px 32px;
-  overflow-y: auto;
   border-right: 1px solid var(--border);
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+  /* Scroll handled by page, not a clipped box */
+  min-height: calc(100vh - 52px - 3px - 46px);
 }
 .question-label {
   font-family: var(--font-mono); font-size: 11px; color: var(--text-faint);
@@ -207,18 +207,81 @@ body {
 
 /* ── RIGHT PANEL ── */
 .right-panel {
-  display: flex; flex-direction: column;
-  padding: 24px 20px; gap: 9px;
-  overflow-y: auto; background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  gap: 0;
+  background: var(--surface);
+  /* Sticky so tools stay visible while left panel scrolls on desktop */
+  position: sticky;
+  top: calc(52px + 3px + 46px); /* header + progress bar + nav */
+  max-height: calc(100vh - 52px - 3px - 46px);
+  overflow-y: auto;
 }
 .panel-section-title {
   font-family: var(--font-mono); font-size: 10px; color: var(--text-faint);
-  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
 }
 
-/* ── ACTION BUTTONS ── */
+/* ── ACCORDION TOOL CARDS ── */
+/* Each tool is a self-contained card. Content expands INSIDE the card,
+   never overlapping adjacent cards. The panel just scrolls normally. */
+.tool-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 8px;
+  transition: box-shadow .15s;
+}
+.tool-card:last-child { margin-bottom: 0; }
+.tool-card:has(.tool-body:not(.hidden)) {
+  box-shadow: var(--shadow-sm);
+}
+
+.tool-trigger {
+  width: 100%; padding: 11px 14px;
+  border: none; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  cursor: pointer; display: flex; align-items: center; gap: 10px;
+  transition: background .15s;
+  text-align: left;
+}
+.tool-trigger:hover { background: #f0eeea; }
+.tool-trigger.open { background: var(--surface); border-bottom: 1px solid var(--border); }
+
+/* colour variants */
+.tool-card.eq   .tool-trigger { background: var(--info-light); color: var(--info); }
+.tool-card.eq   .tool-trigger:hover { background: #dce9f9; }
+.tool-card.eq   .tool-trigger.open  { background: var(--info-light); border-bottom-color: #c5d8f7; }
+
+.tool-card.hint .tool-trigger { background: var(--warn-light); color: var(--warn); }
+.tool-card.hint .tool-trigger:hover { background: #fce9d4; }
+.tool-card.hint .tool-trigger.open  { background: var(--warn-light); border-bottom-color: #f5d5b8; }
+
+.tool-card.solution .tool-trigger.open { border-bottom-color: #c8ebd8; }
+
+.tool-body {
+  padding: 14px;
+  animation: accordionIn .18s ease;
+  background: var(--surface);
+}
+@keyframes accordionIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.btn-icon { font-size: 15px; flex-shrink: 0; }
+.btn-label { flex: 1; }
+.btn-arrow {
+  font-size: 11px; opacity: .5;
+  transition: transform .2s ease;
+  display: inline-block;
+}
+.tool-trigger.open .btn-arrow { transform: rotate(180deg); opacity: .7; }
+
+/* ── STANDALONE ACTION BUTTONS (Next, etc.) ── */
 .action-btn {
-  width: 100%; padding: 10px 14px; border-radius: var(--radius);
+  width: 100%; padding: 11px 14px; border-radius: var(--radius);
   border: 1px solid var(--border); background: var(--bg); color: var(--text);
   font-family: var(--font-body); font-size: 13px; font-weight: 500;
   cursor: pointer; display: flex; align-items: center; gap: 10px;
@@ -227,14 +290,9 @@ body {
 .action-btn:hover { border-color: var(--border-strong); background: var(--surface); box-shadow: var(--shadow-sm); }
 .action-btn.primary { background: var(--accent); border-color: var(--accent); color: white; }
 .action-btn.primary:hover { background: var(--accent-hover); }
-.action-btn.secondary { background: var(--info-light); border-color: #c5d8f7; color: var(--info); }
-.action-btn.warn-btn { background: var(--warn-light); border-color: #f5d5b8; color: var(--warn); }
-.btn-icon { font-size: 15px; flex-shrink: 0; }
-.btn-label { flex: 1; }
-.btn-arrow { font-size: 11px; opacity: .6; }
 
-/* ── INLINE PANELS ── */
-.inline-panel { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; animation: slideDown .18s ease; }
+/* ── INLINE PANELS (kept for mobile modal use) ── */
+.inline-panel { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; animation: accordionIn .18s ease; }
 @keyframes slideDown { from{opacity:0;transform:translateY(-5px)} to{opacity:1;transform:translateY(0)} }
 .inline-panel-header {
   padding: 8px 13px; background: var(--bg); border-bottom: 1px solid var(--border);
@@ -392,9 +450,14 @@ body {
    MOBILE
 ═══════════════════════════════════════ */
 @media (max-width: 768px) {
-  .quiz-layout { grid-template-columns: 1fr; height: auto; overflow: visible; }
-  .left-panel { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 16px; }
-  .right-panel { padding: 20px 16px; }
+  .quiz-layout { grid-template-columns: 1fr; min-height: auto; align-items: start; }
+  .left-panel { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 16px; min-height: auto; }
+  .right-panel {
+    padding: 20px 16px;
+    position: static; /* no sticky on mobile */
+    max-height: none;
+    overflow-y: visible;
+  }
   .quiz-nav, .app-header { padding-left: 16px; padding-right: 16px; }
   .modal-backdrop { align-items: flex-end; padding: 0; }
   .modal-card { max-width: 100%; border-radius: var(--radius-lg) var(--radius-lg) 0 0; animation: modalUp .28s cubic-bezier(.34,1.3,.64,1); }
@@ -1589,7 +1652,40 @@ function Calculator() {
 }
 
 /* ─────────────────────────────────────────────
-   COMPONENT — Equation Panel
+   COMPONENT — EquationBody (inside accordion card)
+───────────────────────────────────────────── */
+function EquationBody({ eq }) {
+  const ref = useRef();
+  useEffect(() => renderKatex(ref.current), [eq]);
+  return (
+    <div ref={ref}>
+      <div className="equation-name">{eq.name}</div>
+      <div className="equation-box">$${eq.latex}$$</div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   COMPONENT — HintBody (inside accordion card)
+───────────────────────────────────────────── */
+function HintBody({ hints }) {
+  return (
+    <div>
+      {hints.map((h, i) => (
+        <div className="hint-step" key={i}>
+          <div className="hint-num">{i + 1}</div>
+          <div>
+            <div className="hint-text">{h.text}</div>
+            {h.formula && <div className="hint-formula">{h.formula}</div>}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   COMPONENT — Equation Panel (legacy, kept for any modal use)
 ───────────────────────────────────────────── */
 function EquationPanel({ eq, onClose }) {
   const ref = useRef();
@@ -2211,52 +2307,73 @@ function QuizPageWithDots({ question, questionIdx, total, answeredMap, onAnswer,
           )}
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT — sticky accordion panel */}
         <div className="right-panel">
           <div className="panel-section-title">Tools</div>
 
-          <button className="action-btn secondary" onClick={() => toggle("eq")}>
-            <span className="btn-icon">∑</span><span className="btn-label">Equation</span>
-            <span className="btn-arrow">{showEq?"▲":"▼"}</span>
-          </button>
-          {showEq && <EquationPanel eq={question.equation} onClose={() => setShowEq(false)} />}
-
-          <button className="action-btn warn-btn" onClick={() => toggle("hint")}>
-            <span className="btn-icon">💡</span><span className="btn-label">Hint</span>
-            <span className="btn-arrow">{showHint?"▲":"▼"}</span>
-          </button>
-          {showHint && <HintPanel hints={question.hints} onClose={() => setShowHint(false)} />}
-
-          <button className="action-btn" onClick={() => toggle("calc")}>
-            <span className="btn-icon">⌗</span><span className="btn-label">Calculator</span>
-            <span className="btn-arrow">{showCalc?"▲":"▼"}</span>
-          </button>
-          {showCalc && (
-            <div className="inline-panel">
-              <div className="inline-panel-header">
-                <span>⌗ Calculator</span>
-                <button className="close-btn" onClick={() => setShowCalc(false)}>×</button>
+          {/* ── Equation accordion card ── */}
+          <div className="tool-card eq">
+            <button className={`tool-trigger${showEq?" open":""}`} onClick={() => toggle("eq")}>
+              <span className="btn-icon">∑</span>
+              <span className="btn-label">Equation</span>
+              <span className="btn-arrow">▼</span>
+            </button>
+            {showEq && (
+              <div className="tool-body">
+                <EquationBody eq={question.equation} />
               </div>
-              <div className="inline-panel-body"><Calculator /></div>
-            </div>
-          )}
+            )}
+          </div>
 
-          <div className="divider" />
+          {/* ── Hint accordion card ── */}
+          <div className="tool-card hint">
+            <button className={`tool-trigger${showHint?" open":""}`} onClick={() => toggle("hint")}>
+              <span className="btn-icon">💡</span>
+              <span className="btn-label">Hint</span>
+              <span className="btn-arrow">▼</span>
+            </button>
+            {showHint && (
+              <div className="tool-body">
+                <HintBody hints={question.hints} />
+              </div>
+            )}
+          </div>
 
-          <button className="action-btn" onClick={() => setShowAnswer(v => !v)}>
-            <span className="btn-icon">🔍</span><span className="btn-label">Show Solution</span>
-            <span className="btn-arrow">{showAnswer?"▲":"▼"}</span>
-          </button>
-          {showAnswer && <AnswerPanel solution={question.solution} />}
+          {/* ── Calculator accordion card ── */}
+          <div className="tool-card calc">
+            <button className={`tool-trigger${showCalc?" open":""}`} onClick={() => toggle("calc")}>
+              <span className="btn-icon">⌗</span>
+              <span className="btn-label">Calculator</span>
+              <span className="btn-arrow">▼</span>
+            </button>
+            {showCalc && (
+              <div className="tool-body">
+                <Calculator />
+              </div>
+            )}
+          </div>
 
-          <div style={{ flex: 1 }} />
+          {/* ── Solution accordion card ── */}
+          <div className="tool-card solution" style={{marginBottom:"12px"}}>
+            <button className={`tool-trigger${showAnswer?" open":""}`} onClick={() => setShowAnswer(v => !v)}>
+              <span className="btn-icon">🔍</span>
+              <span className="btn-label">Show Solution</span>
+              <span className="btn-arrow">▼</span>
+            </button>
+            {showAnswer && (
+              <div className="tool-body" style={{padding:0}}>
+                <AnswerPanel solution={question.solution} />
+              </div>
+            )}
+          </div>
 
-          <button className="action-btn primary" onClick={onNext}>
+          {/* ── Next button ── */}
+          <button className="action-btn primary" onClick={onNext} style={{marginBottom:"12px"}}>
             <span className="btn-icon">{isLast ? "🏁" : "→"}</span>
             <span className="btn-label">{isLast ? "Finish Quiz" : "Next Question"}</span>
           </button>
 
-          {/* Progress dots — uses full questions array */}
+          {/* ── Progress dots ── */}
           <div className="progress-mini">
             <div className="panel-section-title">Progress</div>
             <div className="progress-dots">
