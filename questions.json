@@ -1,0 +1,1094 @@
+[
+  {
+    "id": 1,
+    "question": "If a firm uses cash to purchase inventory, its quick ratio will increase.",
+    "tables": [],
+    "choices": ["True", "False"],
+    "answer": 1,
+    "equation": { "name": "Quick Ratio", "latex": "\\text{Quick Ratio} = \\frac{CA - \\text{Inventory}}{CL}" },
+    "hints": [
+      { "text": "Quick ratio = (Current Assets − Inventory) / Current Liabilities", "formula": "" },
+      { "text": "Buying inventory with cash: Cash ↓ and Inventory ↑ by the same amount", "formula": "CA stays the same, but Inventory ↑" },
+      { "text": "Since inventory is subtracted in the numerator, a higher inventory makes the numerator SMALLER", "formula": "(CA − Inventory) ↓ → Quick Ratio ↓" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Before", "text": "Quick Ratio = (CA − Inventory) / CL" },
+        { "label": "Effect", "text": "Cash ↓ and Inventory ↑ by equal amount → numerator shrinks" },
+        { "label": "Result", "text": "Quick Ratio DECREASES, not increases" }
+      ],
+      "result": "FALSE",
+      "explanation": "When you use cash to buy inventory, cash goes down and inventory goes up by the same amount. Since the quick ratio subtracts inventory from current assets, the numerator gets smaller — so the quick ratio actually DECREASES."
+    }
+  },
+  {
+    "id": 2,
+    "question": "During the year, Doug's Bakery decreased its accounts receivable by $50, increased its inventory by $100, and decreased its accounts payable by $50. For these three accounts, the firm has a net:",
+    "tables": [],
+    "choices": ["$200 use of cash.", "$100 use of cash.", "$0 use of cash.", "$100 source of cash.", "$200 source of cash."],
+    "answer": 1,
+    "equation": { "name": "Sources & Uses of Cash", "latex": "\\text{Net Cash} = \\sum \\text{Sources} - \\sum \\text{Uses}" },
+    "hints": [
+      { "text": "Asset DECREASES → Source of cash (cash IN ✅)", "formula": "A/R ↓ $50 → +$50 source" },
+      { "text": "Asset INCREASES → Use of cash (cash OUT ❌)", "formula": "Inventory ↑ $100 → −$100 use" },
+      { "text": "Liability DECREASES → Use of cash (cash OUT ❌)", "formula": "A/P ↓ $50 → −$50 use" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "A/R ↓$50", "text": "Asset decreased → Source +$50" },
+        { "label": "Inv ↑$100", "text": "Asset increased → Use −$100" },
+        { "label": "A/P ↓$50", "text": "Liability decreased → Use −$50" },
+        { "label": "Net", "text": "+$50 − $100 − $50 = −$100" }
+      ],
+      "result": "$100 Use of Cash",
+      "explanation": "Doug's Bakery spent more cash than it received. Buying inventory and paying down payables both cost cash, outweighing the cash collected from reducing receivables."
+    }
+  },
+  {
+    "id": 3,
+    "question": "Atlasta Limo Corp. has an average collection period of 36.5 days. Sales are $300,001. What is the average investment in receivables?",
+    "tables": [],
+    "choices": ["$4,441", "$8,219", "$10,000", "$30,000", "$36,500"],
+    "answer": 3,
+    "equation": { "name": "Average Investment in Receivables", "latex": "\\text{Avg Receivables} = \\frac{\\text{Sales}}{365} \\times \\text{Collection Period}" },
+    "hints": [
+      { "text": "Step 1: Find daily sales", "formula": "$300,001 ÷ 365 = $821.92/day" },
+      { "text": "Step 2: Multiply daily sales by the collection period", "formula": "$821.92 × 36.5 = $30,000" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Daily Sales", "text": "$300,001 ÷ 365 = $821.92/day" },
+        { "label": "Avg Rec", "text": "$821.92 × 36.5 = $30,000" }
+      ],
+      "result": "$30,000",
+      "explanation": "The company earns ~$822 per day. Since customers take 36.5 days to pay, about $30,000 is sitting uncollected at any given time — that's the average investment in receivables."
+    }
+  },
+  {
+    "id": 4,
+    "question": "A Toronto banker considering loaning money to a firm for ten years would most likely prefer the firm have a debt ratio of _____ and a times interest earned ratio of _____.",
+    "tables": [],
+    "choices": ["0.75; 0.75", "0.50; 1.00", "0.45; 1.75", "0.40; 2.50", "0.35; 3.00"],
+    "answer": 4,
+    "equation": { "name": "Debt Ratio & TIE", "latex": "\\text{Debt Ratio} = \\frac{TA - TE}{TA} \\qquad \\text{TIE} = \\frac{EBIT}{Interest}" },
+    "hints": [
+      { "text": "A banker wants the LOWEST possible debt ratio — less debt = less risk of default", "formula": "0.35 = only 35% debt-financed (safest)" },
+      { "text": "A banker wants the HIGHEST possible TIE — company can easily cover interest", "formula": "3.00 = earns 3× its interest obligations" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Debt Ratio", "text": "Lowest = 0.35 → least financial risk for lender" },
+        { "label": "TIE", "text": "Highest = 3.00 → most cushion to cover interest" }
+      ],
+      "result": "0.35 ; 3.00",
+      "explanation": "A long-term lender wants minimal debt exposure and comfortable interest coverage. 0.35 and 3.00 are the safest combination — lowest debt reliance and highest ability to service that debt."
+    }
+  },
+  {
+    "id": 5,
+    "question": "What was the quick ratio for Bo Knows Profit Corp. for 2018?",
+    "tables": [
+      {
+        "title": "Bo Know Profit Corp. — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Sales", "$8,800"], "style": "" },
+          { "cells": ["Less: Costs", "5,600"], "style": "" },
+          { "cells": ["Depreciation", "900"], "style": "" },
+          { "cells": ["EBIT", "2,300"], "style": "subtotal" },
+          { "cells": ["Less: Interest", "350"], "style": "" },
+          { "cells": ["EBT", "1,950"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "550"], "style": "" },
+          { "cells": ["Net Income", "1,400"], "style": "total" },
+          { "cells": ["Dividends", "900"], "style": "" },
+          { "cells": ["Addition to Retained Earnings", "500"], "style": "" }
+        ]
+      },
+      {
+        "title": "Bo Know Profit Corp. — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$170", "$110"], "style": "" },
+          { "cells": ["Accounts Receivable", "500", "700"], "style": "" },
+          { "cells": ["Inventory", "1,240", "1,000"], "style": "" },
+          { "cells": ["Current Assets", "1,910", "1,810"], "style": "subtotal" },
+          { "cells": ["Fixed Assets", "2,000", "3,500"], "style": "" },
+          { "cells": ["Total Assets", "$3,910", "$5,310"], "style": "total" },
+          { "cells": ["Accounts Payable", "$135", "$120"], "style": "" },
+          { "cells": ["Notes Payable", "1,200", "1,400"], "style": "" },
+          { "cells": ["Current Liabilities", "1,335", "1,520"], "style": "subtotal" },
+          { "cells": ["Long-term Debt", "2,005", "2,620"], "style": "" },
+          { "cells": ["Common Stock (50 shares)", "100", "200"], "style": "" },
+          { "cells": ["Retained Earnings", "470", "970"], "style": "" },
+          { "cells": ["Total Liab. & Equity", "$3,910", "$5,310"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["0.21", "0.47", "0.50", "0.53", "1.40"],
+    "answer": 3,
+    "equation": { "name": "Quick Ratio", "latex": "\\text{Quick Ratio} = \\frac{CA - \\text{Inventory}}{CL}" },
+    "hints": [
+      { "text": "Use 2018 numbers from the balance sheet", "formula": "CA = $1,810 | Inventory = $1,000 | CL = $1,520" },
+      { "text": "Subtract inventory from CA, then divide by CL", "formula": "($1,810 − $1,000) ÷ $1,520" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "CA", "text": "Current Assets (2018) = $1,810M" },
+        { "label": "Inventory", "text": "$1,000M" },
+        { "label": "CL", "text": "Current Liabilities (2018) = $1,520M" },
+        { "label": "Calc", "text": "($1,810 − $1,000) ÷ $1,520 = $810 ÷ $1,520 = 0.533" }
+      ],
+      "result": "0.53",
+      "explanation": "Below 1.0 means the firm cannot fully cover short-term obligations without selling inventory. For every $1 owed, they have only $0.53 in quick assets."
+    }
+  },
+  {
+    "id": 6,
+    "question": "What was the total asset turnover in 2018? (Young, Inc.)",
+    "tables": [
+      {
+        "title": "Young, Inc. — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$1,384"], "style": "subtotal" },
+          { "cells": ["Less: Cost of Goods Sold", "605"], "style": "" },
+          { "cells": ["Less: Depreciation", "180"], "style": "" },
+          { "cells": ["EBIT", "599"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "80"], "style": "" },
+          { "cells": ["Taxable Income", "519"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "156"], "style": "" },
+          { "cells": ["Net Income", "$363"], "style": "total" },
+          { "cells": ["Addition to Retained Earnings", "254"], "style": "" },
+          { "cells": ["Dividends Paid", "109"], "style": "" }
+        ]
+      },
+      {
+        "title": "Young, Inc. — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$100", "$121"], "style": "" },
+          { "cells": ["Accounts Receivable", "350", "425"], "style": "" },
+          { "cells": ["Inventory", "440", "410"], "style": "" },
+          { "cells": ["Current Assets", "890", "956"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "1,556", "1,704"], "style": "" },
+          { "cells": ["Total Assets", "$2,446", "$2,660"], "style": "total" },
+          { "cells": ["Accounts Payable", "$400", "$350"], "style": "" },
+          { "cells": ["Notes Payable", "390", "370"], "style": "" },
+          { "cells": ["Current Liabilities", "790", "720"], "style": "subtotal" },
+          { "cells": ["Long-term Debt", "500", "550"], "style": "" },
+          { "cells": ["Common Stock", "600", "580"], "style": "" },
+          { "cells": ["Retained Earnings", "556", "810"], "style": "" },
+          { "cells": ["Total Liabilities", "$2,446", "$2,660"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["0.23", "0.25", "0.52", "0.57", "1.92"],
+    "answer": 2,
+    "equation": { "name": "Total Asset Turnover", "latex": "\\text{TAT} = \\frac{\\text{Sales}}{\\text{Total Assets}}" },
+    "hints": [
+      { "text": "Find Net Sales and Total Assets from 2018", "formula": "Sales = $1,384 | Total Assets = $2,660" },
+      { "text": "Divide Sales by Total Assets", "formula": "$1,384 ÷ $2,660 = 0.52" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Sales", "text": "Net Sales (2018) = $1,384M" },
+        { "label": "TA", "text": "Total Assets (2018) = $2,660M" },
+        { "label": "Calc", "text": "$1,384 ÷ $2,660 = 0.52" }
+      ],
+      "result": "0.52",
+      "explanation": "For every $1 of assets, Young Inc. generates $0.52 in sales. A TAT below 1.0 is normal for asset-heavy companies — Young has $1,704M in fixed assets alone."
+    }
+  },
+  {
+    "id": 7,
+    "question": "What is the quick ratio for Young for 2017?",
+    "tables": [
+      {
+        "title": "Young, Inc. — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$100", "$121"], "style": "" },
+          { "cells": ["Accounts Receivable", "350", "425"], "style": "" },
+          { "cells": ["Inventory", "440", "410"], "style": "" },
+          { "cells": ["Current Assets", "890", "956"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "1,556", "1,704"], "style": "" },
+          { "cells": ["Total Assets", "$2,446", "$2,660"], "style": "total" },
+          { "cells": ["Accounts Payable", "$400", "$350"], "style": "" },
+          { "cells": ["Notes Payable", "390", "370"], "style": "" },
+          { "cells": ["Current Liabilities", "790", "720"], "style": "subtotal" },
+          { "cells": ["Long-term Debt", "500", "550"], "style": "" },
+          { "cells": ["Common Stock", "600", "580"], "style": "" },
+          { "cells": ["Retained Earnings", "556", "810"], "style": "" },
+          { "cells": ["Total Liabilities", "$2,446", "$2,660"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["0.57", "0.63", "0.76", "1.13", "1.33"],
+    "answer": 0,
+    "equation": { "name": "Quick Ratio", "latex": "\\text{Quick Ratio} = \\frac{CA - \\text{Inventory}}{CL}" },
+    "hints": [
+      { "text": "Use 2017 numbers — don't accidentally use 2018!", "formula": "CA = $890 | Inventory = $440 | CL = $790" },
+      { "text": "Subtract inventory from CA, divide by CL", "formula": "($890 − $440) ÷ $790" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "CA 2017", "text": "$890M" },
+        { "label": "Inventory 2017", "text": "$440M" },
+        { "label": "CL 2017", "text": "$790M" },
+        { "label": "Calc", "text": "($890 − $440) ÷ $790 = $450 ÷ $790 = 0.57" }
+      ],
+      "result": "0.57",
+      "explanation": "In 2017, Young had only $0.57 of quick assets for every $1 of short-term obligations. Below 1.0 means they'd need to sell inventory to fully cover current liabilities."
+    }
+  },
+  {
+    "id": 8,
+    "question": "What is the current ratio for Young in 2018?",
+    "tables": [
+      {
+        "title": "Young, Inc. — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$100", "$121"], "style": "" },
+          { "cells": ["Accounts Receivable", "350", "425"], "style": "" },
+          { "cells": ["Inventory", "440", "410"], "style": "" },
+          { "cells": ["Current Assets", "890", "956"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "1,556", "1,704"], "style": "" },
+          { "cells": ["Total Assets", "$2,446", "$2,660"], "style": "total" },
+          { "cells": ["Accounts Payable", "$400", "$350"], "style": "" },
+          { "cells": ["Notes Payable", "390", "370"], "style": "" },
+          { "cells": ["Current Liabilities", "790", "720"], "style": "subtotal" }
+        ]
+      }
+    ],
+    "choices": ["1.13", "1.21", "1.23", "1.33", "1.47"],
+    "answer": 3,
+    "equation": { "name": "Current Ratio", "latex": "\\text{Current Ratio} = \\frac{CA}{CL}" },
+    "hints": [
+      { "text": "Use 2018 numbers for both CA and CL", "formula": "CA = $956 | CL = $720" },
+      { "text": "Simply divide CA by CL — no need to subtract inventory here", "formula": "$956 ÷ $720" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "CA 2018", "text": "$956M (Cash $121 + A/R $425 + Inventory $410)" },
+        { "label": "CL 2018", "text": "$720M (A/P $350 + Notes $370)" },
+        { "label": "Calc", "text": "$956 ÷ $720 = 1.33" }
+      ],
+      "result": "1.33",
+      "explanation": "Young Inc. has $1.33 of current assets for every $1 of current liabilities — comfortably above 1.0. They can cover short-term obligations without stress."
+    }
+  },
+  {
+    "id": 9,
+    "question": "What was inventory turnover for 2018? (Young, Inc.)",
+    "tables": [
+      {
+        "title": "Young, Inc. — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$1,384"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "605"], "style": "" },
+          { "cells": ["Net Income", "$363"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Young, Inc. — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Inventory", "440", "410"], "style": "" },
+          { "cells": ["Current Assets", "890", "956"], "style": "subtotal" },
+          { "cells": ["Total Assets", "$2,446", "$2,660"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["1.38", "1.42", "1.48", "3.15", "3.38"],
+    "answer": 2,
+    "equation": { "name": "Inventory Turnover", "latex": "\\text{Inventory Turnover} = \\frac{\\text{COGS}}{\\text{Inventory}}" },
+    "hints": [
+      { "text": "Use COGS from the income statement and Inventory from the 2018 balance sheet", "formula": "COGS = $605 | Inventory = $410" },
+      { "text": "Divide COGS by Inventory", "formula": "$605 ÷ $410 = 1.476" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "COGS", "text": "$605M" },
+        { "label": "Inventory 2018", "text": "$410M" },
+        { "label": "Calc", "text": "$605 ÷ $410 = 1.476 ≈ 1.48" }
+      ],
+      "result": "1.48",
+      "explanation": "Young Inc. sells through its entire inventory about 1.5 times per year — relatively slow. A low turnover can signal sluggish sales or excess inventory sitting in the warehouse."
+    }
+  },
+  {
+    "id": 10,
+    "question": "Marble Comics' times interest earned ratio is:",
+    "tables": [
+      {
+        "title": "Marble Comic Group — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$905"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "522"], "style": "" },
+          { "cells": ["Less: General & Adm. Expenses", "93"], "style": "" },
+          { "cells": ["Less: Depreciation", "110"], "style": "" },
+          { "cells": ["EBIT", "180"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "61"], "style": "" },
+          { "cells": ["Earnings Before Taxes", "119"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "30"], "style": "" },
+          { "cells": ["Net Income", "$89"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Marble Comic Group — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$75", "$135"], "style": "" },
+          { "cells": ["Account Receivable", "230", "214"], "style": "" },
+          { "cells": ["Inventory", "240", "188"], "style": "" },
+          { "cells": ["Current Assets", "545", "537"], "style": "subtotal" },
+          { "cells": ["Fixed Assets", "788", "890"], "style": "" },
+          { "cells": ["Total Assets", "$1,333", "$1,427"], "style": "total" },
+          { "cells": ["Accounts Payable", "$89", "$110"], "style": "" },
+          { "cells": ["Notes Payable", "227", "442"], "style": "" },
+          { "cells": ["Current Liabilities", "316", "552"], "style": "subtotal" },
+          { "cells": ["Long-term Debt", "615", "440"], "style": "" },
+          { "cells": ["Common Stock", "55", "55"], "style": "" },
+          { "cells": ["Retained Earnings", "347", "380"], "style": "" },
+          { "cells": ["Total Liab. & Equity", "$1,333", "$1,427"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["0.34", "1.46", "1.95", "2.95", "4.80"],
+    "answer": 3,
+    "equation": { "name": "Times Interest Earned", "latex": "\\text{TIE} = \\frac{EBIT}{\\text{Interest}}" },
+    "hints": [
+      { "text": "Find EBIT and Interest Paid from the income statement", "formula": "EBIT = $180 | Interest = $61" },
+      { "text": "Divide EBIT by Interest", "formula": "$180 ÷ $61 = 2.95" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "EBIT", "text": "$180M" },
+        { "label": "Interest", "text": "$61M" },
+        { "label": "Calc", "text": "$180 ÷ $61 = 2.95" }
+      ],
+      "result": "2.95",
+      "explanation": "Marble Comics earns almost 3 times what it needs to cover interest — decent but not stellar. A banker would prefer TIE above 3.0 for long-term comfort."
+    }
+  },
+  {
+    "id": 11,
+    "question": "Cora Operation has an inventory turnover of 121 and a receivables turnover of 36. This means that it takes _____ days for the firm to sell its inventory and collect payment for that sale.",
+    "tables": [],
+    "choices": ["2.32", "4.29", "11.86", "13.16", "14.09"],
+    "answer": 3,
+    "equation": { "name": "Operating Cycle", "latex": "\\text{Days Inv} = \\frac{365}{\\text{Inv Turnover}} \\quad \\text{Days Rec} = \\frac{365}{\\text{Rec Turnover}}" },
+    "hints": [
+      { "text": "Days to sell inventory = 365 ÷ Inventory Turnover", "formula": "365 ÷ 121 = 3.02 days" },
+      { "text": "Days to collect payment = 365 ÷ Receivables Turnover", "formula": "365 ÷ 36 = 10.14 days" },
+      { "text": "Total cycle = both added together", "formula": "3.02 + 10.14 = 13.16 days" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Inv Days", "text": "365 ÷ 121 = 3.02 days" },
+        { "label": "Rec Days", "text": "365 ÷ 36 = 10.14 days" },
+        { "label": "Total", "text": "3.02 + 10.14 = 13.16 days" }
+      ],
+      "result": "13.16 days",
+      "explanation": "Cora sells inventory incredibly fast (3 days!) but still waits ~10 days to collect payment. The full cash cycle from purchase to collection is 13.16 days."
+    }
+  },
+  {
+    "id": 12,
+    "question": "The profit margin of Marble Comics Group is:",
+    "tables": [
+      {
+        "title": "Marble Comic Group — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$905"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "522"], "style": "" },
+          { "cells": ["Less: General & Adm. Expenses", "93"], "style": "" },
+          { "cells": ["Less: Depreciation", "110"], "style": "" },
+          { "cells": ["EBIT", "180"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "61"], "style": "" },
+          { "cells": ["Earnings Before Taxes", "119"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "30"], "style": "" },
+          { "cells": ["Net Income", "$89"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["3.6%", "9.8%", "13.1%", "19.9%", "22.3%"],
+    "answer": 1,
+    "equation": { "name": "Profit Margin", "latex": "\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Sales}}" },
+    "hints": [
+      { "text": "Find Net Income and Net Sales from the income statement", "formula": "Net Income = $89 | Sales = $905" },
+      { "text": "Divide Net Income by Sales and multiply by 100", "formula": "$89 ÷ $905 = 0.0983 = 9.8%" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Net Income", "text": "$89M" },
+        { "label": "Sales", "text": "$905M" },
+        { "label": "Calc", "text": "$89 ÷ $905 = 0.0983 = 9.83%" }
+      ],
+      "result": "9.8%",
+      "explanation": "For every $1 of sales, Marble Comics keeps about $0.10 as profit after all expenses. A ~10% profit margin is reasonable for most industries."
+    }
+  },
+  {
+    "id": 13,
+    "question": "What was the average collection period for 2018? (Young, Inc.)",
+    "tables": [
+      {
+        "title": "Young, Inc. — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$1,384"], "style": "subtotal" },
+          { "cells": ["Net Income", "$363"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Young, Inc. — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Accounts Receivable", "350", "425"], "style": "" },
+          { "cells": ["Total Assets", "$2,446", "$2,660"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["92 days", "112 days", "151 days", "211 days", "256 days"],
+    "answer": 1,
+    "equation": { "name": "Average Collection Period", "latex": "\\text{ACP} = \\frac{365 \\times AR}{\\text{Sales}}" },
+    "hints": [
+      { "text": "Step 1: Find Receivables Turnover = Sales ÷ A/R (2018)", "formula": "$1,384 ÷ $425 = 3.257" },
+      { "text": "Step 2: ACP = 365 ÷ Receivables Turnover", "formula": "365 ÷ 3.257 = 112 days" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Rec Turnover", "text": "$1,384 ÷ $425 = 3.257" },
+        { "label": "ACP", "text": "365 ÷ 3.257 = 112 days" }
+      ],
+      "result": "112 days",
+      "explanation": "Young Inc. waits about 112 days (nearly 4 months!) to collect payment after a sale. This is quite long and suggests slow-paying customers or loose credit policies."
+    }
+  },
+  {
+    "id": 14,
+    "question": "What is Woodburn's return on assets for 2018?",
+    "tables": [
+      {
+        "title": "Woodburn, Inc. — Income Statement 2018 ($000s)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$6,380"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "4,120"], "style": "" },
+          { "cells": ["Less: Depreciation", "360"], "style": "" },
+          { "cells": ["EBIT", "1,900"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "45"], "style": "" },
+          { "cells": ["Taxable Income", "1,855"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "650"], "style": "" },
+          { "cells": ["Net Income", "1,205"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Woodburn, Inc. — Balance Sheet ($000s)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$230", "$340"], "style": "" },
+          { "cells": ["Accounts Receivable", "910", "950"], "style": "" },
+          { "cells": ["Inventory", "1,490", "1,460"], "style": "" },
+          { "cells": ["Current Assets", "2,630", "$2,750"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "3,190", "3,220"], "style": "" },
+          { "cells": ["Total Assets", "$5,820", "$5,970"], "style": "total" },
+          { "cells": ["Accounts Payable", "$850", "1,020"], "style": "" },
+          { "cells": ["Long-term Debt", "1,650", "1,400"], "style": "" },
+          { "cells": ["Common Stock", "2,500", "2,200"], "style": "" },
+          { "cells": ["Retained Earnings", "820", "1,350"], "style": "" },
+          { "cells": ["Total Liabilities & Equity", "$5,820", "$5,970"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["18.50%", "18.67%", "19.89%", "20.18%", "20.70%"],
+    "answer": 3,
+    "equation": { "name": "Return on Assets", "latex": "\\text{ROA} = \\frac{\\text{Net Income}}{\\text{Total Assets}}" },
+    "hints": [
+      { "text": "Find Net Income and Total Assets (2018)", "formula": "Net Income = $1,205 | Total Assets = $5,970" },
+      { "text": "Divide Net Income by Total Assets", "formula": "$1,205 ÷ $5,970 = 0.2018 = 20.18%" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Net Income", "text": "$1,205K" },
+        { "label": "Total Assets 2018", "text": "$5,970K" },
+        { "label": "Calc", "text": "$1,205 ÷ $5,970 = 0.2018 = 20.18%" }
+      ],
+      "result": "20.18%",
+      "explanation": "For every $1 of assets, Woodburn generates $0.20 of profit — a strong ROA. This means the company is very efficient at converting its asset base into earnings."
+    }
+  },
+  {
+    "id": 15,
+    "question": "What is the current ratio for 2018? (Smith Corporation)",
+    "tables": [
+      {
+        "title": "Smith Corporation — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$8,324"], "style": "" },
+          { "cells": ["Cost of Goods Sold", "4,988"], "style": "" },
+          { "cells": ["Depreciation", "1,190"], "style": "" },
+          { "cells": ["EBIT", "2,146"], "style": "subtotal" },
+          { "cells": ["Interest Paid", "320"], "style": "" },
+          { "cells": ["Taxable Income", "1,826"], "style": "subtotal" },
+          { "cells": ["Taxes", "621"], "style": "" },
+          { "cells": ["Net Income", "$1,205"], "style": "total" },
+          { "cells": ["Dividends Paid", "400"], "style": "" },
+          { "cells": ["Addition to Retained Earnings", "805"], "style": "" }
+        ]
+      },
+      {
+        "title": "Smith Corporation — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$5,415", "$3,341"], "style": "" },
+          { "cells": ["Accounts Receivable", "2,460", "979"], "style": "" },
+          { "cells": ["Inventory", "2,405", "2,885"], "style": "" },
+          { "cells": ["Current Assets", "10,280", "7,205"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "12,300", "16,720"], "style": "" },
+          { "cells": ["Total Assets", "22,580", "23,925"], "style": "total" },
+          { "cells": ["Accounts Payable", "1,110", "1,650"], "style": "" },
+          { "cells": ["Notes Payable", "2,500", "1,900"], "style": "" },
+          { "cells": ["Current Liabilities", "3,610", "3,550"], "style": "subtotal" },
+          { "cells": ["Long-term Debt", "4,800", "4,600"], "style": "" },
+          { "cells": ["Common Stock", "5,100", "5,900"], "style": "" },
+          { "cells": ["Retained Earnings", "9,070", "9,875"], "style": "" },
+          { "cells": ["Total Liab. & Equity", "22,580", "23,925"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["1.49", "2.03", "2.18", "2.85", "4.37"],
+    "answer": 1,
+    "equation": { "name": "Current Ratio", "latex": "\\text{Current Ratio} = \\frac{CA}{CL}" },
+    "hints": [
+      { "text": "Use 2018 Current Assets and Current Liabilities", "formula": "CA = $7,205 | CL = $3,550" },
+      { "text": "Divide CA by CL", "formula": "$7,205 ÷ $3,550 = 2.03" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "CA 2018", "text": "$7,205M (Cash $3,341 + A/R $979 + Inventory $2,885)" },
+        { "label": "CL 2018", "text": "$3,550M (A/P $1,650 + Notes $1,900)" },
+        { "label": "Calc", "text": "$7,205 ÷ $3,550 = 2.03" }
+      ],
+      "result": "2.03",
+      "explanation": "Smith Corp has $2.03 of current assets for every $1 of current liabilities — a very healthy ratio. The company can comfortably cover its short-term obligations."
+    }
+  },
+  {
+    "id": 16,
+    "question": "What was the profit margin in 2018? (Young, Inc.)",
+    "tables": [
+      {
+        "title": "Young, Inc. — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$1,384"], "style": "subtotal" },
+          { "cells": ["Less: Cost of Goods Sold", "605"], "style": "" },
+          { "cells": ["Less: Depreciation", "180"], "style": "" },
+          { "cells": ["EBIT", "599"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "80"], "style": "" },
+          { "cells": ["Taxable Income", "519"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "156"], "style": "" },
+          { "cells": ["Net Income", "$363"], "style": "total" },
+          { "cells": ["Addition to Retained Earnings", "254"], "style": "" },
+          { "cells": ["Dividends Paid", "109"], "style": "" }
+        ]
+      }
+    ],
+    "choices": ["7.9%", "18.4%", "22.7%", "26.2%", "60.0%"],
+    "answer": 3,
+    "equation": { "name": "Profit Margin", "latex": "\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Sales}}" },
+    "hints": [
+      { "text": "Find Net Income and Net Sales from 2018", "formula": "Net Income = $363 | Sales = $1,384" },
+      { "text": "Divide Net Income by Sales", "formula": "$363 ÷ $1,384 = 0.262 = 26.2%" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Net Income", "text": "$363M" },
+        { "label": "Net Sales", "text": "$1,384M" },
+        { "label": "Calc", "text": "$363 ÷ $1,384 = 0.262 = 26.2%" }
+      ],
+      "result": "26.2%",
+      "explanation": "Young Inc. keeps $0.26 of every $1 in sales as profit — excellent! Compare that to Marble Comics at ~10%. This suggests Young is far more efficient at controlling its costs."
+    }
+  },
+  {
+    "id": 17,
+    "question": "Calculate Marble Comics' ROE for 2018.",
+    "tables": [
+      {
+        "title": "Marble Comic Group — Income Statement 2018 ($M)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$905"], "style": "" },
+          { "cells": ["Net Income", "$89"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Marble Comic Group — Balance Sheet ($M)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Current Assets", "545", "537"], "style": "subtotal" },
+          { "cells": ["Fixed Assets", "788", "890"], "style": "" },
+          { "cells": ["Total Assets", "$1,333", "$1,427"], "style": "total" },
+          { "cells": ["Current Liabilities", "316", "552"], "style": "subtotal" },
+          { "cells": ["Long-term Debt", "615", "440"], "style": "" },
+          { "cells": ["Common Stock", "55", "55"], "style": "" },
+          { "cells": ["Retained Earnings", "347", "380"], "style": "" },
+          { "cells": ["Total Liab. & Equity", "$1,333", "$1,427"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["20.5%", "22.1%", "23.4%", "25.6%", "161.8%"],
+    "answer": 0,
+    "equation": { "name": "Return on Equity", "latex": "\\text{ROE} = \\frac{\\text{Net Income}}{\\text{Total Equity}}" },
+    "hints": [
+      { "text": "Total Equity = Common Stock + Retained Earnings (2018)", "formula": "$55 + $380 = $435M" },
+      { "text": "ROE = Net Income ÷ Total Equity", "formula": "$89 ÷ $435 = 0.2046 = 20.5%" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Total Equity", "text": "Common Stock $55 + Retained Earnings $380 = $435M" },
+        { "label": "Net Income", "text": "$89M" },
+        { "label": "Calc", "text": "$89 ÷ $435 = 0.2046 = 20.5%" }
+      ],
+      "result": "20.5%",
+      "explanation": "For every $1 shareholders invested, Marble Comics generates $0.205 of profit. A 20.5% ROE is solid — shareholders are getting a good return on their investment."
+    }
+  },
+  {
+    "id": 18,
+    "question": "What is the return on equity for Blue Bird, Inc. for 2018?",
+    "tables": [
+      {
+        "title": "Blue Bird, Inc. — Income Statement 2018",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$12,630"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "8,240"], "style": "" },
+          { "cells": ["Less: Depreciation", "1,010"], "style": "" },
+          { "cells": ["EBIT", "3,380"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "750"], "style": "" },
+          { "cells": ["Taxable Income", "2,630"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "920"], "style": "" },
+          { "cells": ["Net Income", "$1,710"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Blue Bird, Inc. — Balance Sheet",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$640", "$590"], "style": "" },
+          { "cells": ["Accounts Receivable", "1,200", "1,390"], "style": "" },
+          { "cells": ["Inventory", "2,300", "2,470"], "style": "" },
+          { "cells": ["Current Assets", "$4,140", "$4,450"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "4,640", "5,200"], "style": "" },
+          { "cells": ["Total Assets", "$8,780", "$9,650"], "style": "total" },
+          { "cells": ["Long-term Debt", "2,500", "2,800"], "style": "" },
+          { "cells": ["Common Stock", "4,000", "4,500"], "style": "" },
+          { "cells": ["Retained Earnings", "1,040", "1,690"], "style": "" },
+          { "cells": ["Total Liab. & Equity", "$8,780", "$9,650"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["26.98%", "27.03%", "27.59%", "27.63%", "28.00%"],
+    "answer": 3,
+    "equation": { "name": "Return on Equity", "latex": "\\text{ROE} = \\frac{\\text{Net Income}}{\\text{Total Equity}}" },
+    "hints": [
+      { "text": "Total Equity = Common Stock + Retained Earnings (2018)", "formula": "$4,500 + $1,690 = $6,190" },
+      { "text": "ROE = Net Income ÷ Total Equity", "formula": "$1,710 ÷ $6,190 = 0.2763 = 27.63%" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Total Equity", "text": "Common Stock $4,500 + Retained Earnings $1,690 = $6,190" },
+        { "label": "Net Income", "text": "$1,710" },
+        { "label": "Calc", "text": "$1,710 ÷ $6,190 = 0.2763 = 27.63%" }
+      ],
+      "result": "27.63%",
+      "explanation": "Blue Bird generates $0.276 for every $1 shareholders invested. At 27.63%, Blue Bird's ROE is strong — significantly better than Marble Comics' 20.5%."
+    }
+  },
+  {
+    "id": 19,
+    "question": "What is Woodburn's total debt ratio for 2018?",
+    "tables": [
+      {
+        "title": "Woodburn, Inc. — Balance Sheet ($000s)",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Cash", "$230", "$340"], "style": "" },
+          { "cells": ["Accounts Receivable", "910", "950"], "style": "" },
+          { "cells": ["Inventory", "1,490", "1,460"], "style": "" },
+          { "cells": ["Current Assets", "2,630", "$2,750"], "style": "subtotal" },
+          { "cells": ["Net Fixed Assets", "3,190", "3,220"], "style": "" },
+          { "cells": ["Total Assets", "$5,820", "$5,970"], "style": "total" },
+          { "cells": ["Accounts Payable", "$850", "1,020"], "style": "" },
+          { "cells": ["Long-term Debt", "1,650", "1,400"], "style": "" },
+          { "cells": ["Common Stock", "2,500", "2,200"], "style": "" },
+          { "cells": ["Retained Earnings", "820", "1,350"], "style": "" },
+          { "cells": ["Total Liab. & Equity", "$5,820", "$5,970"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["23.45%", "29.01%", "35.42%", "40.54%", "43.09%"],
+    "answer": 3,
+    "equation": { "name": "Total Debt Ratio", "latex": "\\text{Total Debt Ratio} = \\frac{TA - TE}{TA}" },
+    "hints": [
+      { "text": "Total Equity = Common Stock + Retained Earnings (2018)", "formula": "$2,200 + $1,350 = $3,550" },
+      { "text": "Total Debt = Total Assets − Total Equity", "formula": "$5,970 − $3,550 = $2,420" },
+      { "text": "Debt Ratio = Total Debt ÷ Total Assets", "formula": "$2,420 ÷ $5,970 = 0.4054 = 40.54%" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Total Equity", "text": "$2,200 + $1,350 = $3,550K" },
+        { "label": "Total Debt", "text": "$5,970 − $3,550 = $2,420K" },
+        { "label": "Calc", "text": "$2,420 ÷ $5,970 = 0.4054 = 40.54%" }
+      ],
+      "result": "40.54%",
+      "explanation": "About 40% of Woodburn's assets are financed by debt. While moderate, a banker would ideally want this below 35% for long-term lending comfort."
+    }
+  },
+  {
+    "id": 20,
+    "question": "What is Woodburn's times interest earned ratio for 2018?",
+    "tables": [
+      {
+        "title": "Woodburn, Inc. — Income Statement 2018 ($000s)",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$6,380"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "4,120"], "style": "" },
+          { "cells": ["Less: Depreciation", "360"], "style": "" },
+          { "cells": ["EBIT", "1,900"], "style": "subtotal" },
+          { "cells": ["Less: Interest Paid", "45"], "style": "" },
+          { "cells": ["Taxable Income", "1,855"], "style": "subtotal" },
+          { "cells": ["Less: Taxes", "650"], "style": "" },
+          { "cells": ["Net Income", "1,205"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["37.34 times", "38.10 times", "38.37 times", "42.03 times", "42.22 times"],
+    "answer": 4,
+    "equation": { "name": "Times Interest Earned", "latex": "\\text{TIE} = \\frac{EBIT}{\\text{Interest}}" },
+    "hints": [
+      { "text": "Find EBIT and Interest Paid from the income statement", "formula": "EBIT = $1,900 | Interest = $45" },
+      { "text": "Divide EBIT by Interest", "formula": "$1,900 ÷ $45 = 42.22 times" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "EBIT", "text": "$1,900K" },
+        { "label": "Interest", "text": "$45K" },
+        { "label": "Calc", "text": "$1,900 ÷ $45 = 42.22 times" }
+      ],
+      "result": "42.22 times",
+      "explanation": "Woodburn can cover its interest payments 42 times over — exceptional! With only $45K in interest vs $1,900K in EBIT, any lender would feel very secure."
+    }
+  },
+  {
+    "id": 21,
+    "question": "What is the days' sales in inventory for Blue Bird? (Use average inventory)",
+    "tables": [
+      {
+        "title": "Blue Bird, Inc. — Income Statement 2018",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$12,630"], "style": "" },
+          { "cells": ["Less: Cost of Goods Sold", "8,240"], "style": "" },
+          { "cells": ["Net Income", "$1,710"], "style": "total" }
+        ]
+      },
+      {
+        "title": "Blue Bird, Inc. — Balance Sheet",
+        "headers": ["Item", "2017", "2018"],
+        "rows": [
+          { "cells": ["Inventory", "2,300", "2,470"], "style": "" },
+          { "cells": ["Current Assets", "$4,140", "$4,450"], "style": "subtotal" },
+          { "cells": ["Total Assets", "$8,780", "$9,650"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["68.93 days", "74.41 days", "81.22 days", "101.01 days", "105.65 days"],
+    "answer": 4,
+    "equation": { "name": "Days' Sales in Inventory (Avg)", "latex": "\\text{Days Inv} = \\frac{365}{COGS / \\text{Avg Inventory}}" },
+    "hints": [
+      { "text": "Average Inventory = (2017 + 2018) ÷ 2", "formula": "($2,300 + $2,470) ÷ 2 = $2,385" },
+      { "text": "Inventory Turnover = COGS ÷ Avg Inventory", "formula": "$8,240 ÷ $2,385 = 3.455" },
+      { "text": "Days' Sales in Inventory = 365 ÷ Turnover", "formula": "365 ÷ 3.455 = 105.65 days" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Avg Inv", "text": "($2,300 + $2,470) ÷ 2 = $2,385" },
+        { "label": "Inv Turnover", "text": "$8,240 ÷ $2,385 = 3.455" },
+        { "label": "Days", "text": "365 ÷ 3.455 = 105.65 days" }
+      ],
+      "result": "105.65 days",
+      "explanation": "Blue Bird takes about 105 days (~3.5 months) to sell through its inventory. That's quite slow — products are sitting in the warehouse a long time before being sold."
+    }
+  },
+  {
+    "id": 22,
+    "question": "The quick ratio is measured as:",
+    "tables": [],
+    "choices": [
+      "Current assets divided by current liabilities.",
+      "Cash on hand plus current liabilities, divided by current assets.",
+      "Current liabilities divided by current assets, plus inventory.",
+      "Current assets minus inventory, divided by current liabilities.",
+      "Current assets minus inventory minus current liabilities."
+    ],
+    "answer": 3,
+    "equation": { "name": "Quick Ratio", "latex": "\\text{Quick Ratio} = \\frac{CA - \\text{Inventory}}{CL}" },
+    "hints": [
+      { "text": "The quick ratio excludes inventory — it's the hardest asset to quickly convert to cash", "formula": "" },
+      { "text": "Numerator = CA minus Inventory; Denominator = Current Liabilities", "formula": "(CA − Inventory) ÷ CL" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Formula", "text": "(Current Assets − Inventory) ÷ Current Liabilities" },
+        { "label": "Why", "text": "Inventory excluded = we only count truly 'quick' assets" }
+      ],
+      "result": "Current assets minus inventory, divided by current liabilities.",
+      "explanation": "The quick ratio removes inventory because you can't always sell it fast. It tests: 'Can we pay bills RIGHT NOW using only cash and receivables?'"
+    }
+  },
+  {
+    "id": 23,
+    "question": "The current ratio is measured as:",
+    "tables": [],
+    "choices": [
+      "Current assets minus current liabilities.",
+      "Current assets divided by current liabilities.",
+      "Current liabilities minus inventory, divided by current assets.",
+      "Cash on hand divided by current liabilities.",
+      "Current liabilities divided by current assets."
+    ],
+    "answer": 1,
+    "equation": { "name": "Current Ratio", "latex": "\\text{Current Ratio} = \\frac{CA}{CL}" },
+    "hints": [
+      { "text": "The current ratio includes ALL current assets — cash, A/R, AND inventory", "formula": "" },
+      { "text": "Simply divide total current assets by total current liabilities", "formula": "CA ÷ CL" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Formula", "text": "Current Assets ÷ Current Liabilities" },
+        { "label": "Benchmark", "text": "Above 1.0 = can cover short-term bills" }
+      ],
+      "result": "Current assets divided by current liabilities.",
+      "explanation": "The current ratio is the broadest liquidity measure. It includes everything the company could use to pay short-term bills, including inventory."
+    }
+  },
+  {
+    "id": 24,
+    "question": "The cash ratio is measured as:",
+    "tables": [],
+    "choices": [
+      "Current assets divided by current liabilities.",
+      "Current assets minus cash on hand, divided by current liabilities.",
+      "Current liabilities plus current assets, divided by cash on hand.",
+      "Cash on hand plus inventory, divided by current liabilities.",
+      "Cash on hand divided by current liabilities."
+    ],
+    "answer": 4,
+    "equation": { "name": "Cash Ratio", "latex": "\\text{Cash Ratio} = \\frac{\\text{Cash}}{CL}" },
+    "hints": [
+      { "text": "The cash ratio is the STRICTEST liquidity ratio — only actual cash counts", "formula": "" },
+      { "text": "No A/R, no inventory — just cash divided by current liabilities", "formula": "Cash ÷ CL" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Formula", "text": "Cash ÷ Current Liabilities" },
+        { "label": "Strictest", "text": "Only cash counts — no receivables, no inventory" }
+      ],
+      "result": "Cash on hand divided by current liabilities.",
+      "explanation": "The cash ratio asks the hardest question: 'If everything stopped TODAY, could we pay our bills with only what's in the bank?' It's the most conservative liquidity measure."
+    }
+  },
+  {
+    "id": 25,
+    "question": "The inventory turnover ratio is measured as:",
+    "tables": [],
+    "choices": [
+      "Total sales minus inventory.",
+      "Inventory times total sales.",
+      "Cost of goods sold divided by inventory.",
+      "Inventory times cost of goods sold.",
+      "Inventory plus cost of goods sold."
+    ],
+    "answer": 2,
+    "equation": { "name": "Inventory Turnover", "latex": "\\text{Inventory Turnover} = \\frac{\\text{COGS}}{\\text{Inventory}}" },
+    "hints": [
+      { "text": "We use COGS (not sales) because inventory is recorded at cost, not selling price", "formula": "" },
+      { "text": "Divide COGS by the inventory balance", "formula": "COGS ÷ Inventory" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Formula", "text": "COGS ÷ Inventory" },
+        { "label": "Why COGS?", "text": "Inventory is at cost, so we match it with COGS (also at cost)" }
+      ],
+      "result": "Cost of goods sold divided by inventory.",
+      "explanation": "Inventory turnover tells you how many times per year the company sells through its entire stock. Higher = more efficient. We use COGS (not sales) because both are measured at cost."
+    }
+  },
+  {
+    "id": 26,
+    "question": "The quick ratio:",
+    "tables": [],
+    "choices": [
+      "Indicates the ability of a firm to meet its current obligations without disposing of any inventory.",
+      "Depicts the ability of a firm to pay off its long-term debts in a timely manner.",
+      "Compares the current cash holdings of a firm to the current liabilities.",
+      "Measures a firm's ability to generate cash from its operations.",
+      "Indicates how quickly a firm can liquidate its inventory."
+    ],
+    "answer": 0,
+    "equation": { "name": "Quick Ratio", "latex": "\\text{Quick Ratio} = \\frac{CA - \\text{Inventory}}{CL}" },
+    "hints": [
+      { "text": "Think about WHY inventory is removed from the quick ratio", "formula": "" },
+      { "text": "By removing inventory, we test if the firm can pay bills WITHOUT selling any stock", "formula": "(CA − Inventory) ÷ CL" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Key idea", "text": "Inventory excluded = we assume it can't be quickly sold" },
+        { "label": "Therefore", "text": "Quick ratio tests ability to meet obligations WITHOUT selling inventory" }
+      ],
+      "result": "Indicates the ability of a firm to meet its current obligations without disposing of any inventory.",
+      "explanation": "The whole point of the quick ratio is to test liquidity without relying on inventory sales. It answers: 'Can we pay short-term debts using only cash and receivables?'"
+    }
+  },
+  {
+    "id": 27,
+    "question": "A financial manager who needs to find out how long it will take before their firm runs out of cash if no further cash comes in should consider the _________.",
+    "tables": [],
+    "choices": [
+      "Current ratio.",
+      "Quick ratio.",
+      "Cash ratio.",
+      "Net working capital to total assets ratio.",
+      "Interval measure."
+    ],
+    "answer": 4,
+    "equation": { "name": "Interval Measure", "latex": "\\text{Interval Measure} = \\frac{\\text{Current Assets}}{\\text{Average Daily Operating Costs}}" },
+    "hints": [
+      { "text": "Which ratio specifically measures how many DAYS a firm can survive with no new cash?", "formula": "" },
+      { "text": "The Interval Measure = Current Assets ÷ Average Daily Operating Costs", "formula": "= number of days the firm can operate" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Formula", "text": "Current Assets ÷ Average Daily Operating Costs" },
+        { "label": "Result", "text": "Number of days firm can survive with zero new cash inflows" }
+      ],
+      "result": "Interval Measure",
+      "explanation": "The interval measure is like a 'survival countdown clock.' It tells you exactly how many days the company can keep operating using only its current assets if all cash inflows suddenly stopped."
+    }
+  },
+  {
+    "id": 28,
+    "question": "Activities of the firm that generate cash are known as:",
+    "tables": [],
+    "choices": [
+      "Sources of cash.",
+      "Uses of cash.",
+      "Cash payments.",
+      "Cash receipts.",
+      "Cash on hand."
+    ],
+    "answer": 0,
+    "equation": { "name": "Sources of Cash", "latex": "\\text{Sources: Asset} \\downarrow \\text{ or Liability/Equity} \\uparrow" },
+    "hints": [
+      { "text": "When cash flows INTO the firm, that's a _____ of cash", "formula": "" },
+      { "text": "Examples: selling assets, taking on debt, collecting receivables", "formula": "All generate cash → Sources" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Definition", "text": "Any activity that brings cash INTO the firm" },
+        { "label": "Examples", "text": "Selling assets, borrowing money, collecting A/R" }
+      ],
+      "result": "Sources of cash.",
+      "explanation": "Sources of cash are activities that increase the firm's cash balance — selling something you own (asset decreases) or taking on new debt/equity (liability increases)."
+    }
+  },
+  {
+    "id": 29,
+    "question": "Activities of the firm in which cash is spent are known as:",
+    "tables": [],
+    "choices": [
+      "Sources of cash.",
+      "Uses of cash.",
+      "Cash payments.",
+      "Cash receipts.",
+      "Cash on hand."
+    ],
+    "answer": 1,
+    "equation": { "name": "Uses of Cash", "latex": "\\text{Uses: Asset} \\uparrow \\text{ or Liability/Equity} \\downarrow" },
+    "hints": [
+      { "text": "When cash flows OUT of the firm, that's a _____ of cash", "formula": "" },
+      { "text": "Examples: buying inventory, paying down debt, paying dividends", "formula": "All spend cash → Uses" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Definition", "text": "Any activity that reduces the firm's cash balance" },
+        { "label": "Examples", "text": "Buying assets, repaying loans, paying dividends" }
+      ],
+      "result": "Uses of cash.",
+      "explanation": "Uses of cash are activities that decrease the firm's cash balance — buying something (asset increases) or paying down debt/obligations (liability decreases)."
+    }
+  },
+  {
+    "id": 30,
+    "question": "Return on assets is defined as:",
+    "tables": [],
+    "choices": [
+      "Sales divided by net fixed assets.",
+      "EBIT divided by net fixed assets.",
+      "Net income divided by net fixed assets.",
+      "EBIT divided by total assets.",
+      "Net income divided by total assets."
+    ],
+    "answer": 4,
+    "equation": { "name": "Return on Assets", "latex": "\\text{ROA} = \\frac{\\text{Net Income}}{\\text{Total Assets}}" },
+    "hints": [
+      { "text": "ROA measures profit generated per dollar of ALL assets owned", "formula": "" },
+      { "text": "Use Net Income (after tax/interest), not EBIT, and Total Assets (not just fixed)", "formula": "Net Income ÷ Total Assets" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Numerator", "text": "Net Income (bottom line, after all expenses)" },
+        { "label": "Denominator", "text": "Total Assets (everything the company owns)" }
+      ],
+      "result": "Net income divided by total assets.",
+      "explanation": "ROA tells you how efficiently the entire asset base generates profit. We use net income (not EBIT) because we want the true bottom-line return after taxes and interest."
+    }
+  },
+  {
+    "id": 31,
+    "question": "Profit margin is defined as:",
+    "tables": [],
+    "choices": [
+      "EBIT divided by sales.",
+      "Cost of goods sold divided by sales.",
+      "Net income divided by sales.",
+      "Net income divided by total assets.",
+      "EBIT divided by total assets."
+    ],
+    "answer": 2,
+    "equation": { "name": "Profit Margin", "latex": "\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Sales}}" },
+    "hints": [
+      { "text": "Profit margin = how much of each sales dollar is kept as profit", "formula": "" },
+      { "text": "Use Net Income (not EBIT) divided by Sales (not assets)", "formula": "Net Income ÷ Sales" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Numerator", "text": "Net Income (true profit after all costs)" },
+        { "label": "Denominator", "text": "Sales (total revenue)" }
+      ],
+      "result": "Net income divided by sales.",
+      "explanation": "Profit margin answers: 'Out of every $1 we sold, how many cents did we actually keep?' It measures how well the company controls its costs relative to revenue."
+    }
+  }
+]
