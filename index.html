@@ -1571,6 +1571,494 @@ body {
       "result": "Net income divided by sales.",
       "explanation": "Profit margin answers: 'Out of every $1 we sold, how many cents did we actually keep?' It measures how well the company controls its costs relative to revenue."
     }
+  },
+
+  {
+    "id": 32,
+    "question": "Joshua Corporation — Prepare a vertical analysis for 2027. What is the Cost of Goods Sold as a % of Net Sales for 2027?",
+    "tables": [
+      {
+        "title": "Joshua Corporation — Operating Data",
+        "headers": ["Item", "2027", "2026"],
+        "rows": [
+          { "cells": ["Net Sales", "$800,000", "$600,000"], "style": "subtotal" },
+          { "cells": ["Cost of Goods Sold", "520,000", "408,000"], "style": "" },
+          { "cells": ["Selling Expenses", "120,000", "72,000"], "style": "" },
+          { "cells": ["Administrative Expenses", "60,000", "48,000"], "style": "" },
+          { "cells": ["Income Tax Expense", "30,000", "24,000"], "style": "" },
+          { "cells": ["Net Income", "70,000", "48,000"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["60.0%", "62.5%", "65.0%", "68.0%", "70.0%"],
+    "answer": 2,
+    "equation": { "name": "Vertical Analysis", "latex": "\\text{Each Item \\%} = \\frac{\\text{Line Item}}{\\text{Net Sales}} \\times 100" },
+    "hints": [
+      { "text": "Vertical analysis = each item ÷ Net Sales × 100", "formula": "" },
+      { "text": "Use 2027 numbers only", "formula": "COGS = $520,000 | Net Sales = $800,000" },
+      { "text": "Divide COGS by Net Sales", "formula": "$520,000 ÷ $800,000 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "COGS", "text": "$520,000" },
+        { "label": "Net Sales", "text": "$800,000" },
+        { "label": "Calc", "text": "$520,000 ÷ $800,000 × 100 = 65.0%" }
+      ],
+      "result": "65.0%",
+      "explanation": "In 2027, COGS was 65% of Net Sales — meaning 65 cents of every dollar in revenue went to the cost of producing goods. This improved from 68% in 2026, showing better cost control."
+    }
+  },
+
+  {
+    "id": 33,
+    "question": "Joshua Corporation — Vertical Analysis. What is Net Income as a % of Net Sales for 2026?",
+    "tables": [
+      {
+        "title": "Joshua Corporation — Operating Data",
+        "headers": ["Item", "2027", "2026"],
+        "rows": [
+          { "cells": ["Net Sales", "$800,000", "$600,000"], "style": "subtotal" },
+          { "cells": ["Cost of Goods Sold", "520,000", "408,000"], "style": "" },
+          { "cells": ["Selling Expenses", "120,000", "72,000"], "style": "" },
+          { "cells": ["Administrative Expenses", "60,000", "48,000"], "style": "" },
+          { "cells": ["Income Tax Expense", "30,000", "24,000"], "style": "" },
+          { "cells": ["Net Income", "70,000", "48,000"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["6.0%", "7.5%", "8.0%", "8.75%", "9.0%"],
+    "answer": 2,
+    "equation": { "name": "Vertical Analysis", "latex": "\\text{Net Income \\%} = \\frac{\\text{Net Income}}{\\text{Net Sales}} \\times 100" },
+    "hints": [
+      { "text": "Use 2026 numbers", "formula": "Net Income = $48,000 | Net Sales = $600,000" },
+      { "text": "Divide Net Income by Net Sales", "formula": "$48,000 ÷ $600,000 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Net Income 2026", "text": "$48,000" },
+        { "label": "Net Sales 2026", "text": "$600,000" },
+        { "label": "Calc", "text": "$48,000 ÷ $600,000 × 100 = 8.0%" }
+      ],
+      "result": "8.0%",
+      "explanation": "In 2026, Joshua kept 8 cents of every dollar in sales as profit. In 2027 this improved to 8.75%, meaning the company became slightly more profitable despite higher selling expenses."
+    }
+  },
+
+  {
+    "id": 34,
+    "question": "Delaney Corporation — Horizontal Analysis using 2026 as base. What is the % change in Net Sales?",
+    "tables": [
+      {
+        "title": "Delaney Corporation — Income Statement",
+        "headers": ["Item", "2027", "2026"],
+        "rows": [
+          { "cells": ["Net Sales", "$598,000", "$500,000"], "style": "subtotal" },
+          { "cells": ["Cost of Goods Sold", "477,000", "420,000"], "style": "" },
+          { "cells": ["Gross Profit", "121,000", "80,000"], "style": "subtotal" },
+          { "cells": ["Operating Expenses", "80,000", "44,000"], "style": "" },
+          { "cells": ["Net Income", "$41,000", "$36,000"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["15.0%", "16.5%", "18.0%", "19.6%", "20.0%"],
+    "answer": 3,
+    "equation": { "name": "Horizontal Analysis", "latex": "\\text{Change \\%} = \\frac{\\text{2027} - \\text{2026}}{\\text{2026}} \\times 100" },
+    "hints": [
+      { "text": "Horizontal analysis = (This year − Last year) ÷ Last year × 100", "formula": "" },
+      { "text": "Net Sales change", "formula": "($598,000 − $500,000) ÷ $500,000 × 100" },
+      { "text": "Calculate the numerator first", "formula": "$98,000 ÷ $500,000 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Change", "text": "$598,000 − $500,000 = $98,000" },
+        { "label": "Base", "text": "$500,000 (2026)" },
+        { "label": "Calc", "text": "$98,000 ÷ $500,000 × 100 = 19.6%" }
+      ],
+      "result": "19.6%",
+      "explanation": "Net Sales increased by 19.6% from 2026 to 2027. This looks great on the surface, but we need to check if expenses grew faster than sales."
+    }
+  },
+
+  {
+    "id": 35,
+    "question": "Delaney Corporation — Horizontal Analysis. What is the % change in Operating Expenses?",
+    "tables": [
+      {
+        "title": "Delaney Corporation — Income Statement",
+        "headers": ["Item", "2027", "2026"],
+        "rows": [
+          { "cells": ["Net Sales", "$598,000", "$500,000"], "style": "subtotal" },
+          { "cells": ["Operating Expenses", "80,000", "44,000"], "style": "" },
+          { "cells": ["Net Income", "$41,000", "$36,000"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["55.0%", "66.7%", "72.5%", "81.8%", "85.0%"],
+    "answer": 3,
+    "equation": { "name": "Horizontal Analysis", "latex": "\\text{Change \\%} = \\frac{\\text{2027} - \\text{2026}}{\\text{2026}} \\times 100" },
+    "hints": [
+      { "text": "Operating Expenses change", "formula": "($80,000 − $44,000) ÷ $44,000 × 100" },
+      { "text": "Calculate the numerator first", "formula": "$36,000 ÷ $44,000 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Change", "text": "$80,000 − $44,000 = $36,000" },
+        { "label": "Base", "text": "$44,000 (2026)" },
+        { "label": "Calc", "text": "$36,000 ÷ $44,000 × 100 = 81.8%" }
+      ],
+      "result": "81.8%",
+      "explanation": "Operating Expenses jumped 81.8% — much faster than the 19.6% growth in sales! This is a red flag. Even though revenue grew, expenses exploded, which is why Net Income only grew 13.9%."
+    }
+  },
+
+  {
+    "id": 36,
+    "question": "Delaney Corporation — Vertical Analysis 2027. What is Operating Expenses as a % of Net Sales?",
+    "tables": [
+      {
+        "title": "Delaney Corporation — Income Statement",
+        "headers": ["Item", "2027", "2026"],
+        "rows": [
+          { "cells": ["Net Sales", "$598,000", "$500,000"], "style": "subtotal" },
+          { "cells": ["Cost of Goods Sold", "477,000", "420,000"], "style": "" },
+          { "cells": ["Gross Profit", "121,000", "80,000"], "style": "subtotal" },
+          { "cells": ["Operating Expenses", "80,000", "44,000"], "style": "" },
+          { "cells": ["Net Income", "$41,000", "$36,000"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["7.4%", "8.8%", "10.5%", "13.4%", "15.0%"],
+    "answer": 3,
+    "equation": { "name": "Vertical Analysis", "latex": "\\text{Each Item \\%} = \\frac{\\text{Line Item}}{\\text{Net Sales}} \\times 100" },
+    "hints": [
+      { "text": "Use 2027 numbers", "formula": "Op. Exp = $80,000 | Net Sales = $598,000" },
+      { "text": "Divide Operating Expenses by Net Sales", "formula": "$80,000 ÷ $598,000 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Op. Expenses 2027", "text": "$80,000" },
+        { "label": "Net Sales 2027", "text": "$598,000" },
+        { "label": "Calc", "text": "$80,000 ÷ $598,000 × 100 = 13.4%" }
+      ],
+      "result": "13.4%",
+      "explanation": "Operating Expenses consumed 13.4% of sales in 2027, up from 8.8% in 2026. This is the key problem for Delaney — expenses are eating a bigger slice of revenue each year."
+    }
+  },
+
+  {
+    "id": 37,
+    "question": "Nordstrom, Inc. — Compute the current ratio for the end of year.",
+    "tables": [
+      {
+        "title": "Nordstrom, Inc. — Balance Sheet Data ($M)",
+        "headers": ["Item", "End of Year", "Beginning of Year"],
+        "rows": [
+          { "cells": ["Cash & equivalents", "$795", "$72"], "style": "" },
+          { "cells": ["Accounts receivable (net)", "2,035", "1,942"], "style": "" },
+          { "cells": ["Inventory", "898", "900"], "style": "" },
+          { "cells": ["Other current assets", "326", "303"], "style": "" },
+          { "cells": ["Total current assets", "$4,054", "$3,217"], "style": "subtotal" },
+          { "cells": ["Total current liabilities", "$2,014", "$1,601"], "style": "subtotal" }
+        ]
+      }
+    ],
+    "choices": ["1.75", "1.89", "2.01", "2.15", "2.25"],
+    "answer": 2,
+    "equation": { "name": "Current Ratio", "latex": "\\text{Current Ratio} = \\frac{\\text{Current Assets}}{\\text{Current Liabilities}}" },
+    "hints": [
+      { "text": "Use End of Year numbers", "formula": "CA = $4,054 | CL = $2,014" },
+      { "text": "Divide CA by CL", "formula": "$4,054 ÷ $2,014" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "CA", "text": "$4,054M" },
+        { "label": "CL", "text": "$2,014M" },
+        { "label": "Calc", "text": "$4,054 ÷ $2,014 = 2.01" }
+      ],
+      "result": "2.01",
+      "explanation": "For every $1 of short-term debt, Nordstrom has $2.01 of current assets. Above 1.0 is healthy — Nordstrom can comfortably cover its short-term obligations."
+    }
+  },
+
+  {
+    "id": 38,
+    "question": "Nordstrom, Inc. — Compute the accounts receivable turnover. (Net credit sales = $8,258M)",
+    "tables": [
+      {
+        "title": "Nordstrom, Inc. — Balance Sheet Data ($M)",
+        "headers": ["Item", "End of Year", "Beginning of Year"],
+        "rows": [
+          { "cells": ["Accounts receivable (net)", "$2,035", "$1,942"], "style": "" },
+          { "cells": ["Total current assets", "$4,054", "$3,217"], "style": "subtotal" }
+        ]
+      }
+    ],
+    "choices": ["3.85 times", "4.00 times", "4.15 times", "4.30 times", "4.50 times"],
+    "answer": 2,
+    "equation": { "name": "Receivables Turnover", "latex": "\\text{AR Turnover} = \\frac{\\text{Net Credit Sales}}{\\text{Average AR}}" },
+    "hints": [
+      { "text": "Average AR = (End + Beginning) ÷ 2", "formula": "($2,035 + $1,942) ÷ 2 = $1,988.5" },
+      { "text": "Divide Net Credit Sales by Average AR", "formula": "$8,258 ÷ $1,988.5" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Avg AR", "text": "($2,035 + $1,942) ÷ 2 = $1,988.5M" },
+        { "label": "Net Credit Sales", "text": "$8,258M" },
+        { "label": "Calc", "text": "$8,258 ÷ $1,988.5 = 4.15 times" }
+      ],
+      "result": "4.15 times",
+      "explanation": "Nordstrom collects its receivables 4.15 times per year — meaning it takes about 88 days on average to collect payment after a sale."
+    }
+  },
+
+  {
+    "id": 39,
+    "question": "Nordstrom, Inc. — Compute the days in inventory. (COGS = $5,328M)",
+    "tables": [
+      {
+        "title": "Nordstrom, Inc. — Balance Sheet Data ($M)",
+        "headers": ["Item", "End of Year", "Beginning of Year"],
+        "rows": [
+          { "cells": ["Inventory", "$898", "$900"], "style": "" }
+        ]
+      }
+    ],
+    "choices": ["55.2 days", "58.7 days", "61.5 days", "65.0 days", "68.3 days"],
+    "answer": 2,
+    "equation": { "name": "Days in Inventory", "latex": "\\text{Days in Inventory} = \\frac{365}{\\text{Inventory Turnover}}" },
+    "hints": [
+      { "text": "Step 1: Average Inventory = (898 + 900) ÷ 2", "formula": "= $899M" },
+      { "text": "Step 2: Inventory Turnover = COGS ÷ Avg Inventory", "formula": "$5,328 ÷ $899 = 5.93 times" },
+      { "text": "Step 3: Days in Inventory = 365 ÷ Turnover", "formula": "365 ÷ 5.93 = 61.5 days" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Avg Inv", "text": "($898 + $900) ÷ 2 = $899M" },
+        { "label": "Inv Turnover", "text": "$5,328 ÷ $899 = 5.93 times" },
+        { "label": "Days", "text": "365 ÷ 5.93 = 61.5 days" }
+      ],
+      "result": "61.5 days",
+      "explanation": "Nordstrom takes about 62 days to sell through its inventory. For a department store carrying fashion items, this is reasonable — but faster would mean less risk of unsold stock."
+    }
+  },
+
+  {
+    "id": 40,
+    "question": "Barnes & Noble 2027 — Compute the profit margin.",
+    "tables": [
+      {
+        "title": "Barnes & Noble — Selected Data ($M)",
+        "headers": ["Item", "2027", "2026"],
+        "rows": [
+          { "cells": ["Net Sales", "$5,121.8", "$5,286.7"], "style": "subtotal" },
+          { "cells": ["Cost of Goods Sold", "3,540.6", "3,679.8"], "style": "" },
+          { "cells": ["Net Income", "75.9", "135.8"], "style": "total" },
+          { "cells": ["Total Assets", "2,993.9", "3,249.8"], "style": "" },
+          { "cells": ["Total Common Stockholders' Equity", "921.6", "1,074.7"], "style": "" }
+        ]
+      }
+    ],
+    "choices": ["1.08%", "1.28%", "1.48%", "1.68%", "1.88%"],
+    "answer": 2,
+    "equation": { "name": "Profit Margin", "latex": "\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Net Sales}} \\times 100" },
+    "hints": [
+      { "text": "Use 2027 numbers", "formula": "Net Income = $75.9 | Net Sales = $5,121.8" },
+      { "text": "Divide Net Income by Net Sales", "formula": "$75.9 ÷ $5,121.8 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Net Income", "text": "$75.9M" },
+        { "label": "Net Sales", "text": "$5,121.8M" },
+        { "label": "Calc", "text": "$75.9 ÷ $5,121.8 × 100 = 1.48%" }
+      ],
+      "result": "1.48%",
+      "explanation": "Barnes & Noble only keeps 1.48 cents per dollar of sales — extremely thin! This is typical for bookstores. Compare this to software companies at 20-25%."
+    }
+  },
+
+  {
+    "id": 41,
+    "question": "Barnes & Noble 2027 — Compute the return on equity (ROE).",
+    "tables": [
+      {
+        "title": "Barnes & Noble — Selected Data ($M)",
+        "headers": ["Item", "2027"],
+        "rows": [
+          { "cells": ["Net Income", "$75.9"], "style": "" },
+          { "cells": ["Total Common Stockholders' Equity", "921.6"], "style": "" }
+        ]
+      }
+    ],
+    "choices": ["6.24%", "7.05%", "7.60%", "8.24%", "9.10%"],
+    "answer": 3,
+    "equation": { "name": "Return on Equity", "latex": "\\text{ROE} = \\frac{\\text{Net Income}}{\\text{Total Equity}} \\times 100" },
+    "hints": [
+      { "text": "Use Total Equity from 2027 (no average — per slide formula)", "formula": "Total Equity = $921.6M" },
+      { "text": "ROE = Net Income ÷ Total Equity × 100", "formula": "$75.9 ÷ $921.6 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Net Income", "text": "$75.9M" },
+        { "label": "Total Equity 2027", "text": "$921.6M" },
+        { "label": "Calc", "text": "$75.9 ÷ $921.6 × 100 = 8.24%" }
+      ],
+      "result": "8.24%",
+      "explanation": "For every $1 shareholders invested, Barnes & Noble generated $0.082 of profit in 2027. This dropped from a higher ROE in 2026, reflecting the decline in net income."
+    }
+  },
+
+  {
+    "id": 42,
+    "question": "Myers, Inc. 2027 — Compute Earnings Per Share (EPS). (Shares: Jan 1 = 32,000; Dec 31 = 40,000. Use simple average.)",
+    "tables": [
+      {
+        "title": "Myers, Inc. — Income Statement 2027",
+        "headers": ["Item", "Amount"],
+        "rows": [
+          { "cells": ["Net Sales", "$400,000"], "style": "" },
+          { "cells": ["Cost of Goods Sold", "230,000"], "style": "" },
+          { "cells": ["Gross Profit", "170,000"], "style": "subtotal" },
+          { "cells": ["Expenses (incl. $16,000 interest & $24,000 tax)", "98,000"], "style": "" },
+          { "cells": ["Net Income", "$72,000"], "style": "total" }
+        ]
+      }
+    ],
+    "choices": ["$1.50", "$1.80", "$2.00", "$2.25", "$2.50"],
+    "answer": 2,
+    "equation": { "name": "Earnings Per Share", "latex": "\\text{EPS} = \\frac{\\text{Net Income}}{\\text{Weighted Average Shares}}" },
+    "hints": [
+      { "text": "Step 1: Weighted Average Shares = (Jan 1 + Dec 31) ÷ 2", "formula": "(32,000 + 40,000) ÷ 2 = 36,000 shares" },
+      { "text": "Step 2: EPS = Net Income ÷ Weighted Average Shares", "formula": "$72,000 ÷ 36,000" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Avg Shares", "text": "(32,000 + 40,000) ÷ 2 = 36,000" },
+        { "label": "Net Income", "text": "$72,000" },
+        { "label": "Calc", "text": "$72,000 ÷ 36,000 = $2.00 per share" }
+      ],
+      "result": "$2.00 per share",
+      "explanation": "Myers earned $2.00 for every share outstanding in 2027. EPS is the foundation for other market ratios — the higher the EPS, the more profitable the company is per share."
+    }
+  },
+
+  {
+    "id": 43,
+    "question": "Myers, Inc. 2027 — Compute the Price-Earnings (P/E) Ratio. (Market price = $14, EPS = $2.00)",
+    "tables": [],
+    "choices": ["5 times", "6 times", "7 times", "8 times", "9 times"],
+    "answer": 2,
+    "equation": { "name": "Price-Earnings Ratio", "latex": "\\text{P/E Ratio} = \\frac{\\text{Market Price Per Share}}{\\text{EPS}}" },
+    "hints": [
+      { "text": "Market Price = $14 | EPS = $2.00", "formula": "" },
+      { "text": "Divide market price by EPS", "formula": "$14 ÷ $2.00" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Market Price", "text": "$14 per share" },
+        { "label": "EPS", "text": "$2.00" },
+        { "label": "Calc", "text": "$14 ÷ $2.00 = 7 times" }
+      ],
+      "result": "7 times",
+      "explanation": "Investors are paying 7 times the company's earnings to buy the stock. A P/E of 7 is relatively low — suggesting the market has modest expectations for Myers' growth. Compare to Apple (~30x) or Amazon (~40-50x)."
+    }
+  },
+
+  {
+    "id": 44,
+    "question": "Myers, Inc. 2027 — Compute the Payout Ratio. (Cash dividends = $21,000, Net Income = $72,000)",
+    "tables": [],
+    "choices": ["20.5%", "25.0%", "29.2%", "32.5%", "35.0%"],
+    "answer": 2,
+    "equation": { "name": "Payout Ratio", "latex": "\\text{Payout Ratio} = \\frac{\\text{Cash Dividends}}{\\text{Net Income}} \\times 100" },
+    "hints": [
+      { "text": "Cash Dividends = $21,000 | Net Income = $72,000", "formula": "" },
+      { "text": "Divide dividends by net income", "formula": "$21,000 ÷ $72,000 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Cash Dividends", "text": "$21,000" },
+        { "label": "Net Income", "text": "$72,000" },
+        { "label": "Calc", "text": "$21,000 ÷ $72,000 × 100 = 29.2%" }
+      ],
+      "result": "29.2%",
+      "explanation": "Myers paid out 29.2% of its profits as dividends to shareholders. The remaining 70.8% was kept in the company (retained earnings) for reinvestment and growth."
+    }
+  },
+
+  {
+    "id": 45,
+    "question": "Myers, Inc. 2027 — Compute Times Interest Earned. (Net Income = $72,000, Interest = $16,000, Income Tax = $24,000)",
+    "tables": [],
+    "choices": ["4 times", "5 times", "6 times", "7 times", "8 times"],
+    "answer": 3,
+    "equation": { "name": "Times Interest Earned", "latex": "\\text{TIE} = \\frac{\\text{Net Income + Interest + Tax}}{\\text{Interest}}" },
+    "hints": [
+      { "text": "Add back interest and tax to get EBIT", "formula": "$72,000 + $16,000 + $24,000 = $112,000" },
+      { "text": "Divide by Interest", "formula": "$112,000 ÷ $16,000" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Numerator", "text": "$72,000 + $16,000 + $24,000 = $112,000" },
+        { "label": "Interest", "text": "$16,000" },
+        { "label": "Calc", "text": "$112,000 ÷ $16,000 = 7 times" }
+      ],
+      "result": "7 times",
+      "explanation": "Myers can cover its interest payments 7 times over — meaning even if profits dropped significantly, they'd still be able to pay their interest. Generally, TIE above 3 is considered safe."
+    }
+  },
+
+  {
+    "id": 46,
+    "question": "Which analysis shows each line item as a percentage of Net Sales within the SAME year?",
+    "tables": [],
+    "choices": [
+      "Horizontal Analysis",
+      "Vertical Analysis",
+      "Trend Analysis",
+      "Ratio Analysis",
+      "Comparative Analysis"
+    ],
+    "answer": 1,
+    "equation": { "name": "Vertical Analysis", "latex": "\\text{Each Item \\%} = \\frac{\\text{Line Item}}{\\text{Net Sales}} \\times 100" },
+    "hints": [
+      { "text": "This analysis looks DOWN a single year's income statement", "formula": "" },
+      { "text": "Net Sales = 100%, everything else is a % of that", "formula": "e.g. COGS ÷ Net Sales × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Key", "text": "Same year, Net Sales = base (100%)" },
+        { "label": "Formula", "text": "Each item ÷ Net Sales × 100" }
+      ],
+      "result": "Vertical Analysis",
+      "explanation": "Vertical analysis shows the composition of an income statement in one year — like 'COGS is 65% of sales.' It helps you see where the money goes within a single period."
+    }
+  },
+
+  {
+    "id": 47,
+    "question": "Which analysis compares changes between two years using the earlier year as the base?",
+    "tables": [],
+    "choices": [
+      "Vertical Analysis",
+      "Ratio Analysis",
+      "Horizontal Analysis",
+      "Common Size Analysis",
+      "Segment Analysis"
+    ],
+    "answer": 2,
+    "equation": { "name": "Horizontal Analysis", "latex": "\\text{Change \\%} = \\frac{\\text{Current Year} - \\text{Base Year}}{\\text{Base Year}} \\times 100" },
+    "hints": [
+      { "text": "This analysis looks ACROSS multiple years", "formula": "" },
+      { "text": "Base year = denominator, change in value = numerator", "formula": "(2027 − 2026) ÷ 2026 × 100" }
+    ],
+    "solution": {
+      "steps": [
+        { "label": "Key", "text": "Across years, base year = denominator" },
+        { "label": "Formula", "text": "(This year − Last year) ÷ Last year × 100" }
+      ],
+      "result": "Horizontal Analysis",
+      "explanation": "Horizontal analysis tracks how numbers change over time — like 'Net Sales grew 19.6% from 2026 to 2027.' It helps spot trends and growth patterns across periods."
+    }
   }
 ]
 </script>
