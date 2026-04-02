@@ -1582,7 +1582,7 @@
 
   {
     "id": 48,
-    "question": "Panza Corporation — Compute Cost of Goods Sold for 2027. (Inventory Turnover = 3.8 times)",
+    "question": "Panza Corporation experienced a fire and records were partially destroyed. Using the data below and the fact that inventory turnover is 3.8 times, compute Cost of Goods Sold for 2027.",
     "tables": [
       {
         "title": "Panza Corporation — Balance Sheet Data",
@@ -1596,39 +1596,65 @@
           { "cells": ["Common Stock ($100 par)", "400,000", "400,000"], "style": "" },
           { "cells": ["Retained Earnings", "113,500", "101,000"], "style": "" }
         ]
+      },
+      {
+        "title": "Additional Information",
+        "headers": ["Item", "Value"],
+        "rows": [
+          { "cells": ["Inventory turnover", "3.8 times"], "style": "" },
+          { "cells": ["Return on common stockholders' equity", "22%"], "style": "" },
+          { "cells": ["Accounts receivable turnover", "11.2 times"], "style": "" },
+          { "cells": ["Return on assets", "18%"], "style": "" },
+          { "cells": ["Total assets at Dec 31, 2026", "$605,000"], "style": "" }
+        ]
       }
     ],
     "choices": ["$570,000", "$646,000", "$684,000", "$722,000", "$760,000"],
     "answer": 3,
     "equation": { "name": "Inventory Turnover (reverse)", "latex": "\\text{COGS} = \\text{Inventory Turnover} \\times \\text{Average Inventory}" },
     "hints": [
-      { "text": "This is a REVERSE calculation — we know the ratio, find the missing number", "formula": "" },
+      { "text": "Which numbers from the balance sheet do you need for inventory turnover?", "formula": "You need Inventory — both years to get Average" },
       { "text": "Step 1: Average Inventory = (2027 + 2026) ÷ 2", "formula": "($200,000 + $180,000) ÷ 2 = $190,000" },
-      { "text": "Step 2: COGS = Inventory Turnover × Average Inventory", "formula": "3.8 × $190,000" }
+      { "text": "Step 2: COGS = Inventory Turnover × Average Inventory", "formula": "3.8 × $190,000 = $722,000" }
     ],
     "solution": {
       "steps": [
+        { "label": "Pick numbers", "text": "Inventory 2027 = $200,000 | Inventory 2026 = $180,000" },
         { "label": "Avg Inventory", "text": "($200,000 + $180,000) ÷ 2 = $190,000" },
         { "label": "Formula", "text": "Inventory Turnover = COGS ÷ Avg Inventory → COGS = Turnover × Avg Inventory" },
         { "label": "Calc", "text": "3.8 × $190,000 = $722,000" }
       ],
       "result": "$722,000",
-      "explanation": "By rearranging the Inventory Turnover formula, we can solve for COGS. This is a reverse calculation — the ratio is given and we work backwards to find the missing financial figure."
+      "explanation": "From the full balance sheet, you only need the Inventory line for both years. Average Inventory = $190,000. Then multiply by the given inventory turnover of 3.8 to reverse-calculate COGS = $722,000."
     }
   },
 
   {
     "id": 49,
-    "question": "Panza Corporation — Compute Net Credit Sales for 2027. (AR Turnover = 11.2 times)",
+    "question": "Panza Corporation — Using the data below and the fact that accounts receivable turnover is 11.2 times, compute Net Credit Sales for 2027.",
     "tables": [
       {
         "title": "Panza Corporation — Balance Sheet Data",
         "headers": ["Item", "Dec 31, 2027", "Dec 31, 2026"],
         "rows": [
-          { "cells": ["Accounts Receivable (net)", "$72,500", "$126,000"], "style": "" },
+          { "cells": ["Cash", "$30,000", "$10,000"], "style": "" },
+          { "cells": ["Accounts Receivable (net)", "72,500", "126,000"], "style": "" },
           { "cells": ["Inventory", "200,000", "180,000"], "style": "" },
+          { "cells": ["Accounts Payable", "50,000", "90,000"], "style": "" },
+          { "cells": ["Notes Payable", "30,000", "60,000"], "style": "" },
           { "cells": ["Common Stock ($100 par)", "400,000", "400,000"], "style": "" },
           { "cells": ["Retained Earnings", "113,500", "101,000"], "style": "" }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "headers": ["Item", "Value"],
+        "rows": [
+          { "cells": ["Inventory turnover", "3.8 times"], "style": "" },
+          { "cells": ["Return on common stockholders' equity", "22%"], "style": "" },
+          { "cells": ["Accounts receivable turnover", "11.2 times"], "style": "" },
+          { "cells": ["Return on assets", "18%"], "style": "" },
+          { "cells": ["Total assets at Dec 31, 2026", "$605,000"], "style": "" }
         ]
       }
     ],
@@ -1636,31 +1662,48 @@
     "answer": 2,
     "equation": { "name": "AR Turnover (reverse)", "latex": "\\text{Net Credit Sales} = \\text{AR Turnover} \\times \\text{Average AR}" },
     "hints": [
+      { "text": "Which numbers from the balance sheet do you need for AR turnover?", "formula": "You need Accounts Receivable — both years to get Average" },
       { "text": "Step 1: Average AR = (2027 + 2026) ÷ 2", "formula": "($72,500 + $126,000) ÷ 2 = $99,250" },
-      { "text": "Step 2: Net Credit Sales = AR Turnover × Average AR", "formula": "11.2 × $99,250" }
+      { "text": "Step 2: Net Credit Sales = AR Turnover × Average AR", "formula": "11.2 × $99,250 = $1,111,600" }
     ],
     "solution": {
       "steps": [
+        { "label": "Pick numbers", "text": "AR 2027 = $72,500 | AR 2026 = $126,000" },
         { "label": "Avg AR", "text": "($72,500 + $126,000) ÷ 2 = $99,250" },
         { "label": "Formula", "text": "AR Turnover = Sales ÷ Avg AR → Sales = Turnover × Avg AR" },
         { "label": "Calc", "text": "11.2 × $99,250 = $1,111,600" }
       ],
       "result": "$1,111,600",
-      "explanation": "By rearranging AR Turnover = Sales ÷ Average AR, we multiply both sides by Average AR to get Net Credit Sales. Panza generated over $1.1 million in credit sales in 2027."
+      "explanation": "From the full balance sheet, you only need the Accounts Receivable line for both years. Average AR = $99,250. Multiply by AR turnover of 11.2 to get Net Credit Sales = $1,111,600."
     }
   },
 
   {
     "id": 50,
-    "question": "Panza Corporation — Compute Net Income for 2027. (ROE = 22%, use AVERAGE equity)",
+    "question": "Panza Corporation — Using the data below and the fact that return on common stockholders' equity is 22%, compute Net Income for 2027.",
     "tables": [
       {
-        "title": "Panza Corporation — Equity Data",
+        "title": "Panza Corporation — Balance Sheet Data",
         "headers": ["Item", "Dec 31, 2027", "Dec 31, 2026"],
         "rows": [
-          { "cells": ["Common Stock ($100 par)", "$400,000", "$400,000"], "style": "" },
-          { "cells": ["Retained Earnings", "113,500", "101,000"], "style": "" },
-          { "cells": ["Total Equity", "513,500", "501,000"], "style": "subtotal" }
+          { "cells": ["Cash", "$30,000", "$10,000"], "style": "" },
+          { "cells": ["Accounts Receivable (net)", "72,500", "126,000"], "style": "" },
+          { "cells": ["Inventory", "200,000", "180,000"], "style": "" },
+          { "cells": ["Accounts Payable", "50,000", "90,000"], "style": "" },
+          { "cells": ["Notes Payable", "30,000", "60,000"], "style": "" },
+          { "cells": ["Common Stock ($100 par)", "400,000", "400,000"], "style": "" },
+          { "cells": ["Retained Earnings", "113,500", "101,000"], "style": "" }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "headers": ["Item", "Value"],
+        "rows": [
+          { "cells": ["Inventory turnover", "3.8 times"], "style": "" },
+          { "cells": ["Return on common stockholders' equity", "22%"], "style": "" },
+          { "cells": ["Accounts receivable turnover", "11.2 times"], "style": "" },
+          { "cells": ["Return on assets", "18%"], "style": "" },
+          { "cells": ["Total assets at Dec 31, 2026", "$605,000"], "style": "" }
         ]
       }
     ],
@@ -1668,53 +1711,70 @@
     "answer": 2,
     "equation": { "name": "ROE with Average Equity", "latex": "\\text{Net Income} = \\text{ROE} \\times \\frac{\\text{Equity}_{2027} + \\text{Equity}_{2026}}{2}" },
     "hints": [
-      { "text": "Step 1: Total Equity for EACH year = Common Stock + Retained Earnings", "formula": "2027: $400,000 + $113,500 = $513,500 | 2026: $400,000 + $101,000 = $501,000" },
-      { "text": "Step 2: Average Equity = (Equity 2027 + Equity 2026) ÷ 2", "formula": "($513,500 + $501,000) ÷ 2 = $507,250" },
-      { "text": "Step 3: Net Income = ROE × Average Equity", "formula": "0.22 × $507,250 = $111,595" }
+      { "text": "Which numbers do you need? Common Stock + Retained Earnings for BOTH years", "formula": "2027: $400,000 + $113,500 | 2026: $400,000 + $101,000" },
+      { "text": "Step 1: Calculate Total Equity each year, then average them", "formula": "Equity 2027 = $513,500 | Equity 2026 = $501,000 | Avg = $507,250" },
+      { "text": "Step 2: Net Income = ROE × Average Equity", "formula": "0.22 × $507,250 = $111,595" }
     ],
     "solution": {
       "steps": [
+        { "label": "Pick numbers", "text": "Common Stock + Retained Earnings for both years" },
         { "label": "Equity 2027", "text": "$400,000 + $113,500 = $513,500" },
         { "label": "Equity 2026", "text": "$400,000 + $101,000 = $501,000" },
         { "label": "Avg Equity", "text": "($513,500 + $501,000) ÷ 2 = $507,250" },
         { "label": "Calc", "text": "0.22 × $507,250 = $111,595" }
       ],
       "result": "$111,595",
-      "explanation": "Using Average Equity (both years), we get $111,595. This matches the teacher's method shown on the whiteboard. Average Equity gives a more accurate base because equity changes throughout the year."
+      "explanation": "From the balance sheet, pick Common Stock and Retained Earnings for both years to calculate Total Equity each year. Average them to get $507,250, then multiply by ROE of 22% to get Net Income = $111,595."
     }
   },
 
   {
     "id": 51,
-    "question": "Panza Corporation — Compute Total Assets at December 31, 2027. (ROA = 18%, Net Income = $111,595, Total Assets 2026 = $605,000)",
+    "question": "Panza Corporation — Using the data below and the fact that return on assets is 18%, compute Total Assets at December 31, 2027. (Use Net Income from Q50 = $111,595)",
     "tables": [
       {
-        "title": "Panza Corporation — Additional Info",
+        "title": "Panza Corporation — Balance Sheet Data",
+        "headers": ["Item", "Dec 31, 2027", "Dec 31, 2026"],
+        "rows": [
+          { "cells": ["Cash", "$30,000", "$10,000"], "style": "" },
+          { "cells": ["Accounts Receivable (net)", "72,500", "126,000"], "style": "" },
+          { "cells": ["Inventory", "200,000", "180,000"], "style": "" },
+          { "cells": ["Accounts Payable", "50,000", "90,000"], "style": "" },
+          { "cells": ["Notes Payable", "30,000", "60,000"], "style": "" },
+          { "cells": ["Common Stock ($100 par)", "400,000", "400,000"], "style": "" },
+          { "cells": ["Retained Earnings", "113,500", "101,000"], "style": "" }
+        ]
+      },
+      {
+        "title": "Additional Information",
         "headers": ["Item", "Value"],
         "rows": [
-          { "cells": ["ROA (Return on Assets)", "18%"], "style": "" },
-          { "cells": ["Net Income 2027", "$111,595"], "style": "" },
-          { "cells": ["Total Assets Dec 31, 2026", "$605,000"], "style": "" }
+          { "cells": ["Inventory turnover", "3.8 times"], "style": "" },
+          { "cells": ["Return on common stockholders' equity", "22%"], "style": "" },
+          { "cells": ["Accounts receivable turnover", "11.2 times"], "style": "" },
+          { "cells": ["Return on assets", "18%"], "style": "" },
+          { "cells": ["Total assets at Dec 31, 2026", "$605,000"], "style": "" }
         ]
       }
     ],
-    "choices": ["$596,500", "$614,200", "$632,167", "$637,172", "$645,000"],
+    "choices": ["$596,500", "$614,200", "$634,944", "$637,172", "$645,000"],
     "answer": 2,
     "equation": { "name": "ROA with Average Assets", "latex": "\\text{Assets}_{2027} = \\left(\\frac{\\text{Net Income}}{\\text{ROA}} \\times 2\\right) - \\text{Assets}_{2026}" },
     "hints": [
-      { "text": "Step 1: Rearrange ROA to find Average Total Assets", "formula": "x = $111,595 ÷ 18% = $619,972" },
-      { "text": "Step 2: Set up the Average equation with x as Total Assets 2027", "formula": "$619,972 = ($605,000 + x) ÷ 2" },
-      { "text": "Step 3: Multiply both sides by 2, then subtract $605,000", "formula": "$619,972 × 2 = $605,000 + x → x = $1,239,944 − $605,000" }
+      { "text": "Which numbers do you need? Net Income (from Q50), ROA, and Total Assets 2026", "formula": "Net Income = $111,595 | ROA = 18% | Assets 2026 = $605,000" },
+      { "text": "Step 1: Find Average Total Assets first", "formula": "x = $111,595 ÷ 0.18 = $619,972" },
+      { "text": "Step 2: Set up average equation — solve for 2027", "formula": "$619,972 = ($605,000 + Assets 2027) ÷ 2" }
     ],
     "solution": {
       "steps": [
+        { "label": "Pick numbers", "text": "Net Income = $111,595 | ROA = 18% | Total Assets 2026 = $605,000" },
         { "label": "Step 1", "text": "x = $111,595 ÷ 18% = $619,972 (Average Total Assets)" },
-        { "label": "Step 2", "text": "$619,972 = ($605,000 + x) ÷ 2" },
-        { "label": "Step 3", "text": "$619,972 × 2 = $605,000 + x" },
-        { "label": "Step 4", "text": "$1,239,944 − $605,000 = x = $634,944" }
+        { "label": "Step 2", "text": "$619,972 = ($605,000 + Assets 2027) ÷ 2" },
+        { "label": "Step 3", "text": "$619,972 × 2 = $605,000 + Assets 2027" },
+        { "label": "Step 4", "text": "$1,239,944 − $605,000 = $634,944" }
       ],
       "result": "$634,944",
-      "explanation": "First find Average Total Assets by rearranging ROA: $111,595 ÷ 0.18 = $619,972. Then set up the average equation: $619,972 = ($605,000 + x) ÷ 2. Multiply both sides by 2 to get $1,239,944 = $605,000 + x. Finally subtract $605,000 to get x = $634,944."
+      "explanation": "From the additional info, use ROA = 18% and Total Assets 2026 = $605,000. Then use Net Income from Q50 ($111,595). Rearrange ROA to find Average Assets = $619,972, then solve for 2027: ($619,972 × 2) − $605,000 = $634,944."
     }
   }
 ]
