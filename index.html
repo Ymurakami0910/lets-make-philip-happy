@@ -447,6 +447,305 @@ body {
 .katex-display { margin: 4px 0 !important; overflow-x: auto; }
 
 /* ═══════════════════════════════════════
+   HOME PAGE
+═══════════════════════════════════════ */
+.home-page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px;
+}
+
+.home-hero {
+  text-align: center;
+  padding: 64px 20px 40px;
+  max-width: 560px;
+  width: 100%;
+}
+
+.home-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--correct-border);
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.home-title {
+  font-family: var(--font-serif);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+.home-title span { color: var(--accent); }
+
+.home-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.home-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 32px;
+  display: inline-flex;
+}
+.home-stat { text-align: center; padding: 0 24px; }
+.home-stat-num { display: block; font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--accent); }
+.home-stat-label { display: block; font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; font-family: var(--font-mono); }
+.home-stat-divider { width: 1px; height: 40px; background: var(--border); }
+
+/* action buttons */
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: left;
+  width: 100%;
+}
+.home-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+.home-btn.primary { background: var(--accent); border-color: var(--accent); }
+.home-btn.primary:hover { background: var(--accent-hover); }
+.home-btn.secondary { background: var(--surface); }
+.home-btn.secondary:hover { border-color: var(--accent); }
+
+.home-btn-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.15);
+  border-radius: 12px;
+}
+.home-btn.secondary .home-btn-icon { background: var(--accent-light); }
+
+.home-btn-text { flex: 1; }
+.home-btn-title { display: block; font-size: 16px; font-weight: 600; color: white; margin-bottom: 3px; }
+.home-btn-desc  { display: block; font-size: 12px; color: rgba(255,255,255,.7); font-family: var(--font-mono); }
+.home-btn.secondary .home-btn-title { color: var(--text); }
+.home-btn.secondary .home-btn-desc  { color: var(--text-muted); }
+.home-btn-arrow { font-size: 18px; color: rgba(255,255,255,.6); flex-shrink: 0; }
+.home-btn.secondary .home-btn-arrow { color: var(--text-faint); }
+
+/* topics grid */
+.home-topics { width: 100%; max-width: 480px; }
+.home-topics-title {
+  font-family: var(--font-mono); font-size: 10px; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
+}
+.home-topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.home-topic-card {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color .15s;
+}
+.home-topic-card:hover { border-color: var(--accent); }
+.home-topic-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.home-topic-label { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.home-topic-desc  { font-size: 11px; color: var(--text-faint); font-family: var(--font-mono); }
+
+/* logo as button */
+.app-logo-btn {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: -0.3px;
+}
+.app-logo-btn span { color: var(--accent); }
+.app-logo-btn:hover { opacity: .75; }
+
+/* ═══════════════════════════════════════
+   EQUATION LIST PAGE
+═══════════════════════════════════════ */
+.eq-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.eq-page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 28px;
+  height: 56px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.eq-back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+.eq-back-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+.eq-page-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--text);
+  flex: 1;
+}
+.eq-page-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.eq-page-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+
+.eq-section { margin-bottom: 36px; }
+.eq-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.eq-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 8px;
+  transition: box-shadow .15s;
+}
+.eq-card:hover { box-shadow: var(--shadow-sm); }
+.eq-card-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  font-family: var(--font-mono);
+  margin-bottom: 8px;
+}
+.eq-card-formula {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  overflow-x: auto;
+}
+.eq-card-note {
+  font-size: 12px;
+  color: var(--accent);
+  margin-top: 8px;
+  font-family: var(--font-mono);
+}
+.eq-card-what {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: var(--info-light);
+  border-left: 3px solid var(--info);
+  border-radius: 0 6px 6px 0;
+}
+.eq-benchmarks {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eq-benchmark-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 12px;
+}
+.eq-benchmark-range {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+.eq-benchmark-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.eq-benchmark-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.eq-benchmark-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════
    MOBILE
 ═══════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -2765,15 +3064,360 @@ function QuizPage({ question, questionIdx, total, answeredMap, onAnswer, onNext,
 }
 
 /* ─────────────────────────────────────────────
+   COMPONENT — Home Page
+───────────────────────────────────────────── */
+function HomePage({ questions, onStartQuiz, onEquations }) {
+  const totalQ = questions.length;
+  const topics = [
+    { icon: "📊", label: "Liquidity Ratios", desc: "Current, Quick, Cash ratio" },
+    { icon: "🔄", label: "Turnover Ratios", desc: "Inventory, AR, Asset turnover" },
+    { icon: "💰", label: "Profitability", desc: "ROA, ROE, Profit margin" },
+    { icon: "📈", label: "Trend Analysis", desc: "Vertical & Horizontal analysis" },
+    { icon: "📉", label: "Solvency", desc: "Debt ratio, TIE" },
+    { icon: "🔢", label: "Market Ratios", desc: "EPS, P/E ratio, Payout ratio" },
+  ];
+  return (
+    <div className="home-page">
+      <div className="home-hero">
+        <div className="home-badge">BCIT · CREA-7120</div>
+        <h1 className="home-title">Finance<span>Quiz</span></h1>
+        <p className="home-subtitle">Master financial ratios and analysis for your finals</p>
+        <div className="home-stats">
+          <div className="home-stat"><span className="home-stat-num">{totalQ}</span><span className="home-stat-label">Questions</span></div>
+          <div className="home-stat-divider" />
+          <div className="home-stat"><span className="home-stat-num">6</span><span className="home-stat-label">Topics</span></div>
+          <div className="home-stat-divider" />
+          <div className="home-stat"><span className="home-stat-num">∞</span><span className="home-stat-label">Attempts</span></div>
+        </div>
+      </div>
+
+      <div className="home-actions">
+        <button className="home-btn primary" onClick={onStartQuiz}>
+          <span className="home-btn-icon">📝</span>
+          <div className="home-btn-text">
+            <span className="home-btn-title">Start Quiz</span>
+            <span className="home-btn-desc">{totalQ} questions · Multiple choice</span>
+          </div>
+          <span className="home-btn-arrow">→</span>
+        </button>
+        <button className="home-btn secondary" onClick={onEquations}>
+          <span className="home-btn-icon">∑</span>
+          <div className="home-btn-text">
+            <span className="home-btn-title">Equation List</span>
+            <span className="home-btn-desc">All formulas in one place</span>
+          </div>
+          <span className="home-btn-arrow">→</span>
+        </button>
+      </div>
+
+      <div className="home-topics">
+        <div className="home-topics-title">What's covered</div>
+        <div className="home-topics-grid">
+          {topics.map((t, i) => (
+            <div className="home-topic-card" key={i}>
+              <span className="home-topic-icon">{t.icon}</span>
+              <div>
+                <div className="home-topic-label">{t.label}</div>
+                <div className="home-topic-desc">{t.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   COMPONENT — Equation List Page
+───────────────────────────────────────────── */
+const EQUATIONS = [
+  {
+    category: "📊 Liquidity Ratios",
+    items: [
+      {
+        name: "Current Ratio",
+        latex: "\\text{Current Ratio} = \\frac{CA}{CL}",
+        what: "Can the company pay its short-term bills using all current assets?",
+        benchmarks: [
+          { range: "< 1.0", label: "Danger 🔴", desc: "Can't cover short-term bills without selling assets" },
+          { range: "1.0 – 2.0", label: "Healthy ✅", desc: "Comfortable — can cover obligations" },
+          { range: "> 2.0", label: "Very safe 💪", desc: "Lots of cushion, though excess cash may be idle" },
+        ]
+      },
+      {
+        name: "Quick Ratio",
+        latex: "\\text{Quick Ratio} = \\frac{CA - \\text{Inventory}}{CL}",
+        what: "Can the company pay short-term bills WITHOUT selling any inventory?",
+        benchmarks: [
+          { range: "< 0.5", label: "Risky 🔴", desc: "Heavily reliant on selling inventory to survive" },
+          { range: "0.5 – 1.0", label: "Watch out ⚠️", desc: "Tight — needs inventory sales to cover bills" },
+          { range: "> 1.0", label: "Strong ✅", desc: "Can cover all short-term obligations from cash & receivables alone" },
+        ]
+      },
+      {
+        name: "Cash Ratio",
+        latex: "\\text{Cash Ratio} = \\frac{\\text{Cash}}{CL}",
+        what: "The strictest test — can the company pay bills with ONLY cash on hand right now?",
+        benchmarks: [
+          { range: "< 0.2", label: "Very low 🔴", desc: "Almost no cash buffer — vulnerable to sudden bills" },
+          { range: "0.2 – 0.5", label: "Acceptable ⚠️", desc: "Moderate cash on hand" },
+          { range: "> 0.5", label: "Strong ✅", desc: "Plenty of cash — but holding too much cash may mean poor investment" },
+        ]
+      },
+    ]
+  },
+  {
+    category: "🔄 Turnover Ratios",
+    items: [
+      {
+        name: "Inventory Turnover",
+        latex: "\\text{Inv Turnover} = \\frac{\\text{COGS}}{\\text{Inventory}}",
+        what: "How many times per year does the company sell through its entire inventory?",
+        benchmarks: [
+          { range: "< 2", label: "Too slow 🔴", desc: "Inventory sitting too long — risk of obsolescence or spoilage" },
+          { range: "2 – 6", label: "Normal ✅", desc: "Typical for most retail/manufacturing industries" },
+          { range: "> 6", label: "Fast 💪", desc: "Very efficient — but could mean stock running too low (risk of stockouts)" },
+        ]
+      },
+      {
+        name: "Days in Inventory",
+        latex: "\\text{Days Inv} = \\frac{365}{\\text{Inv Turnover}}",
+        what: "How many days does it take to sell through all inventory?",
+        benchmarks: [
+          { range: "> 120 days", label: "Too slow 🔴", desc: "Products sitting for 4+ months — major concern" },
+          { range: "30 – 120 days", label: "Normal ✅", desc: "Varies widely by industry" },
+          { range: "< 30 days", label: "Very fast 💪", desc: "e.g. Grocery stores often < 7 days" },
+        ]
+      },
+      {
+        name: "AR Turnover",
+        latex: "\\text{AR Turnover} = \\frac{\\text{Net Sales}}{\\text{AR}}",
+        what: "How many times per year does the company collect its average receivables?",
+        benchmarks: [
+          { range: "< 4", label: "Slow 🔴", desc: "Customers taking 90+ days to pay — cash flow risk" },
+          { range: "4 – 12", label: "Normal ✅", desc: "Typical depending on payment terms" },
+          { range: "> 12", label: "Fast 💪", desc: "Collecting within 30 days — excellent cash management" },
+        ]
+      },
+      {
+        name: "Average Collection Period",
+        latex: "\\text{ACP} = \\frac{365}{\\text{AR Turnover}}",
+        what: "How many days on average does it take to collect payment after a sale?",
+        benchmarks: [
+          { range: "> 90 days", label: "Too long 🔴", desc: "Customers taking 3+ months to pay — serious concern" },
+          { range: "30 – 90 days", label: "Acceptable ⚠️", desc: "Common in B2B — watch the trend over time" },
+          { range: "< 30 days", label: "Excellent ✅", desc: "Fast collection — great for cash flow" },
+        ]
+      },
+      {
+        name: "Total Asset Turnover",
+        latex: "\\text{TAT} = \\frac{\\text{Sales}}{\\text{Total Assets}}",
+        what: "How much revenue does the company generate per $1 of assets owned?",
+        benchmarks: [
+          { range: "< 0.5", label: "Low ⚠️", desc: "Assets not generating much revenue — but normal for capital-heavy industries like utilities" },
+          { range: "0.5 – 1.5", label: "Normal ✅", desc: "Typical for manufacturing and retail" },
+          { range: "> 1.5", label: "Efficient 💪", desc: "High revenue relative to asset base — common in service/tech industries" },
+        ]
+      },
+    ]
+  },
+  {
+    category: "💰 Profitability Ratios",
+    items: [
+      {
+        name: "Profit Margin",
+        latex: "\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Sales}}",
+        what: "Out of every $1 in sales, how many cents does the company actually keep?",
+        benchmarks: [
+          { range: "< 2%", label: "Very thin 🔴", desc: "e.g. Grocery stores, bookstores — almost nothing left after expenses" },
+          { range: "2% – 10%", label: "Normal ✅", desc: "Typical for manufacturing, retail, restaurants" },
+          { range: "> 20%", label: "Excellent 💪", desc: "e.g. Apple ~25%, Google ~22% — very profitable businesses" },
+        ]
+      },
+      {
+        name: "Gross Profit Rate",
+        latex: "\\text{Gross Profit Rate} = \\frac{\\text{Sales} - \\text{COGS}}{\\text{Sales}}",
+        what: "After paying for the product itself (COGS), what % of sales is left to cover other expenses?",
+        benchmarks: [
+          { range: "< 20%", label: "Low ⚠️", desc: "Very little left to cover operating expenses — common in grocery/commodity businesses" },
+          { range: "20% – 50%", label: "Normal ✅", desc: "Typical for retail and manufacturing" },
+          { range: "> 60%", label: "High 💪", desc: "e.g. Software companies — low production cost, very high margin" },
+        ]
+      },
+      {
+        name: "Return on Assets (ROA)",
+        latex: "\\text{ROA} = \\frac{\\text{Net Income}}{\\text{Total Assets}}",
+        what: "For every $1 of assets the company owns, how much profit did it generate?",
+        benchmarks: [
+          { range: "< 5%", label: "Low ⚠️", desc: "Assets not being used efficiently to generate profit" },
+          { range: "5% – 15%", label: "Good ✅", desc: "Assets working reasonably well" },
+          { range: "> 20%", label: "Excellent 💪", desc: "Very efficient use of assets — strong business model" },
+        ]
+      },
+      {
+        name: "Return on Equity (ROE)",
+        latex: "\\text{ROE} = \\frac{\\text{Net Income}}{\\text{Total Equity}}",
+        what: "For every $1 shareholders invested, how much profit did they get back?",
+        benchmarks: [
+          { range: "< 10%", label: "Low ⚠️", desc: "Shareholders not getting great returns — might do better investing elsewhere" },
+          { range: "10% – 20%", label: "Good ✅", desc: "Solid returns for shareholders" },
+          { range: "> 20%", label: "Excellent 💪", desc: "Shareholders doing very well — company is highly profitable per dollar invested" },
+        ]
+      },
+    ]
+  },
+  {
+    category: "📉 Solvency Ratios",
+    items: [
+      {
+        name: "Total Debt Ratio",
+        latex: "\\text{Debt Ratio} = \\frac{TA - TE}{TA}",
+        what: "What % of the company's assets are financed by debt (not by the owners)?",
+        benchmarks: [
+          { range: "< 0.35 (35%)", label: "Safe ✅", desc: "Mostly equity-financed — bankers love this" },
+          { range: "0.35 – 0.60", label: "Moderate ⚠️", desc: "Reasonable but monitor carefully" },
+          { range: "> 0.60 (60%)", label: "Risky 🔴", desc: "Heavy debt load — vulnerable if business slows down" },
+        ]
+      },
+      {
+        name: "Times Interest Earned (TIE)",
+        latex: "\\text{TIE} = \\frac{\\text{EBIT}}{\\text{Interest}}",
+        what: "How many times over can the company cover its interest payments with its earnings?",
+        benchmarks: [
+          { range: "< 1.0", label: "Danger 🔴", desc: "Can't even cover interest — bankruptcy risk" },
+          { range: "1.0 – 3.0", label: "Tight ⚠️", desc: "Covering interest but not much cushion" },
+          { range: "> 3.0", label: "Comfortable ✅", desc: "Lenders feel safe — strong ability to service debt" },
+          { range: "> 10", label: "Excellent 💪", desc: "e.g. Woodburn at 42x — essentially no interest risk" },
+        ]
+      },
+    ]
+  },
+  {
+    category: "📈 Analysis",
+    items: [
+      {
+        name: "Vertical Analysis",
+        latex: "\\text{Each Item \\%} = \\frac{\\text{Line Item}}{\\text{Net Sales}} \\times 100",
+        what: "Shows each line item as a % of Net Sales within the SAME year. Net Sales = 100%.",
+        benchmarks: [
+          { range: "COGS > 80%", label: "Watch out 🔴", desc: "Very little left after production costs — thin gross margin" },
+          { range: "Net Income > 15%", label: "Strong 💪", desc: "Company keeping a large share of every dollar sold" },
+          { range: "Compare years", label: "Key use ✅", desc: "If COGS% is shrinking over time → cost management improving" },
+        ]
+      },
+      {
+        name: "Horizontal Analysis",
+        latex: "\\text{Change \\%} = \\frac{\\text{This Year} - \\text{Last Year}}{\\text{Last Year}} \\times 100",
+        what: "Shows % change between two years. Positive = growth, Negative = decline.",
+        benchmarks: [
+          { range: "Sales up, Expenses up more", label: "Warning 🔴", desc: "Revenue growing but costs growing faster — profit margin will shrink" },
+          { range: "Sales up, Net Income up more", label: "Excellent 💪", desc: "Scaling efficiently — growing revenue AND profitability" },
+          { range: "Negative %", label: "Decline ⚠️", desc: "That line item shrank compared to last year" },
+        ]
+      },
+    ]
+  },
+  {
+    category: "🔢 Market Ratios",
+    items: [
+      {
+        name: "Earnings Per Share (EPS)",
+        latex: "\\text{EPS} = \\frac{\\text{Net Income}}{\\text{Weighted Avg Shares}}",
+        what: "How much profit did the company earn for each share of stock?",
+        benchmarks: [
+          { range: "Negative EPS", label: "Loss 🔴", desc: "Company is losing money — not profitable" },
+          { range: "Low EPS", label: "Caution ⚠️", desc: "Small profit per share — may not attract investors" },
+          { range: "Rising EPS over time", label: "Excellent 💪", desc: "Growing profit per share = company becoming more valuable for shareholders" },
+        ]
+      },
+      {
+        name: "Price-Earnings Ratio (P/E)",
+        latex: "\\text{P/E} = \\frac{\\text{Market Price Per Share}}{\\text{EPS}}",
+        what: "How many times the company's earnings are investors willing to pay for the stock?",
+        benchmarks: [
+          { range: "< 10x", label: "Low expectations ⚠️", desc: "Investors don't expect much growth — or stock may be undervalued" },
+          { range: "10x – 20x", label: "Normal ✅", desc: "Typical for stable, mature companies" },
+          { range: "> 30x", label: "High expectations 🚀", desc: "e.g. Apple ~30x, Amazon ~50x — investors betting on future growth" },
+        ]
+      },
+      {
+        name: "Payout Ratio",
+        latex: "\\text{Payout Ratio} = \\frac{\\text{Cash Dividends}}{\\text{Net Income}}",
+        what: "What % of profits did the company return to shareholders as dividends?",
+        benchmarks: [
+          { range: "0%", label: "No dividend 📈", desc: "All profit reinvested — typical for growth companies (e.g. Amazon historically)" },
+          { range: "20% – 50%", label: "Balanced ✅", desc: "Rewarding shareholders while keeping funds for growth" },
+          { range: "> 80%", label: "High payout ⚠️", desc: "Paying out most of profits — may not have enough left for reinvestment" },
+          { range: "> 100%", label: "Danger 🔴", desc: "Paying more than they earn — unsustainable, borrowing to pay dividends" },
+        ]
+      },
+    ]
+  },
+];
+
+function EquationListPage({ onBack }) {
+  const ref = useRef();
+  useEffect(() => {
+    if (ref.current && window.renderMathInElement) {
+      window.renderMathInElement(ref.current, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false }
+        ],
+        throwOnError: false
+      });
+    }
+  }, []);
+
+  return (
+    <div className="eq-page" ref={ref}>
+      <div className="eq-page-header">
+        <button className="eq-back-btn" onClick={onBack}>← Back</button>
+        <div className="eq-page-title">Equation List</div>
+        <div className="eq-page-sub">{EQUATIONS.reduce((a, c) => a + c.items.length, 0)} formulas</div>
+      </div>
+
+      <div className="eq-page-body">
+        {EQUATIONS.map((section, si) => (
+          <div className="eq-section" key={si}>
+            <div className="eq-section-title">{section.category}</div>
+            {section.items.map((eq, ei) => (
+              <div className="eq-card" key={ei}>
+                <div className="eq-card-name">{eq.name}</div>
+                <div className="eq-card-formula">$${eq.latex}$$</div>
+                <div className="eq-card-what">❓ {eq.what}</div>
+                <div className="eq-benchmarks">
+                  {eq.benchmarks.map((b, bi) => (
+                    <div className="eq-benchmark-row" key={bi}>
+                      <span className="eq-benchmark-range">{b.range}</span>
+                      <div className="eq-benchmark-right">
+                        <span className="eq-benchmark-label">{b.label}</span>
+                        <span className="eq-benchmark-desc">{b.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
    COMPONENT — App (root)
 ───────────────────────────────────────────── */
 function App() {
   /* ── State ── */
-  const [questions,    setQuestions]    = useState([]);     // loaded from JSON
-  const [loadState,    setLoadState]    = useState("loading"); // "loading"|"error"|"ready"
+  const [questions,    setQuestions]    = useState([]);
+  const [loadState,    setLoadState]    = useState("loading");
   const [errorMsg,     setErrorMsg]     = useState("");
+  const [page,         setPage]         = useState("home"); // "home" | "quiz" | "equations"
   const [currentIdx,   setCurrentIdx]   = useState(0);
-  const [answeredMap,  setAnsweredMap]  = useState({});     // { questionId: choiceIndex }
+  const [answeredMap,  setAnsweredMap]  = useState({});
   const [showResults,  setShowResults]  = useState(false);
 
   /* ── Load questions.json ── */
@@ -2834,6 +3478,14 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const handleStartQuiz = useCallback(() => {
+    setPage("quiz");
+    setCurrentIdx(0);
+    setAnsweredMap({});
+    setShowResults(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   /* ── Derived values ── */
   const question     = questions[currentIdx];
   const total        = questions.length;
@@ -2855,18 +3507,29 @@ function App() {
       <div className="error-screen">
         <div className="error-icon">⚠️</div>
         <div className="error-title">Failed to load questions</div>
-        <div className="error-msg">{errorMsg}<br/><br/>Make sure <code>data/questions.json</code> exists and the app is served from a web server (not opened as a file://).</div>
+        <div className="error-msg">{errorMsg}</div>
         <button className="error-btn" onClick={() => window.location.reload()}>Retry</button>
       </div>
     );
   }
 
-  /* ── Render ── */
+  /* ── HOME page ── */
+  if (page === "home") {
+    return <HomePage questions={questions} onStartQuiz={handleStartQuiz} onEquations={() => setPage("equations")} />;
+  }
+
+  /* ── EQUATIONS page ── */
+  if (page === "equations") {
+    return <EquationListPage onBack={() => setPage("home")} />;
+  }
+
+  /* ── QUIZ page ── */
   return (
     <div>
-      {/* Header */}
       <header className="app-header">
-        <div className="app-logo">Finance<span>Quiz</span></div>
+        <button className="app-logo-btn" onClick={() => setPage("home")}>
+          Finance<span>Quiz</span>
+        </button>
         <div className="header-meta">
           <div className={`quiz-counter ${correctCount > 0 ? "good" : ""}`}>
             ✓ {correctCount}/{Object.keys(answeredMap).length}
@@ -2877,12 +3540,10 @@ function App() {
         </div>
       </header>
 
-      {/* Progress bar */}
       <div className="progress-bar">
         <div className="progress-fill" style={{ width: (showResults ? 100 : progress) + "%" }} />
       </div>
 
-      {/* Nav dots */}
       <div className="quiz-nav">
         {questions.map((q, i) => {
           const a   = answeredMap[q.id];
@@ -2901,7 +3562,6 @@ function App() {
         )}
       </div>
 
-      {/* Main content */}
       {showResults ? (
         <ResultsScreen
           questions={questions}
@@ -2910,7 +3570,6 @@ function App() {
           onReview={handleReview}
         />
       ) : question ? (
-        /* Render quiz page — inject progress dots here with full questions context */
         <QuizPageWithDots
           question={question}
           questionIdx={currentIdx}
